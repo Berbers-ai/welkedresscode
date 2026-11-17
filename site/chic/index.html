@@ -51,8 +51,19 @@
   .foot { margin-top:2.4rem; text-align:center; font-size:.85rem; }
   .foot a { color:var(--muted); text-decoration:none; border-bottom:1px solid var(--line); }
   .foot a:hover { color:var(--accent); }
+  .share { display:inline-flex; align-items:center; gap:8px; margin-top:1.3rem; font:600 .85rem/1 system-ui, sans-serif;
+           padding:10px 15px; border:1px solid var(--line); border-radius:99px; background:transparent; color:var(--fg); cursor:pointer; }
+  .share:hover { border-color:var(--accent); color:var(--accent); }
+  .share svg { width:16px; height:16px; }
+  .copied { margin:.6rem 0 0; word-break:break-word; }
+  .card h3 { font-family:system-ui, sans-serif; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); font-weight:normal; margin:1.2rem 0 .3rem; }
+  .codes { padding-left:1.1rem; margin:.3rem 0; }
+  .codes li { margin:.35rem 0; }
+  .codes a, .card p a { color:var(--fg); }
   .all { list-style:none; padding:0; margin:0; columns:2; column-gap:24px; }
   .all li { margin:.15rem 0; break-inside:avoid; }
+  .all.one { columns:1; }
+  .all.one li { margin:.35rem 0; }
   .all a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line); }
   .all a:hover { color:var(--accent); border-color:var(--accent); }
 </style>
@@ -83,7 +94,7 @@
   <g stroke="#2b2420" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"><polygon points="51,118 58,118 57.5,202 53,202" fill="#a8704f"/><polygon points="69,118 62,118 62.5,202 67,202" fill="#a8704f"/><path d="M50,205 Q50,201 55,201 L60,203 L59,206Z" fill="#2b2420"/><path d="M70,205 Q70,201 65,201 L60,203 L61,206Z" fill="#2b2420"/><path d="M51,205 L51,208 M69,205 L69,208" fill="none" stroke-width="1.6"/><path d="M50,99 L70,99 Q88,140 92,172 Q60,180 28,172 Q32,140 50,99Z" fill="#7d2635"/><polygon points="44,53 38,57 35,108 40,109 44,68" fill="#a8704f"/><polygon points="76,53 82,57 85,108 80,109 76,68" fill="#a8704f"/><circle cx="37.5" cy="112" r="3.2" fill="#a8704f"/><circle cx="82.5" cy="112" r="3.2" fill="#a8704f"/><path d="M44,52 Q60,47 76,52 L71,100 L49,100 Z" fill="#7d2635"/><rect x="56.5" y="35" width="7" height="15" fill="#a8704f"/><path d="M51,50.5 Q60,61 69,50.5 Q60,48 51,50.5Z" fill="#a8704f"/><circle cx="53.6" cy="51.6" r=".9" fill="#fbf8f0" stroke-width=".5"/><circle cx="55.2" cy="52.9" r=".9" fill="#fbf8f0" stroke-width=".5"/><circle cx="56.8" cy="53.8" r=".9" fill="#fbf8f0" stroke-width=".5"/><circle cx="58.4" cy="54.3" r=".9" fill="#fbf8f0" stroke-width=".5"/><circle cx="60.0" cy="54.5" r=".9" fill="#fbf8f0" stroke-width=".5"/><circle cx="61.6" cy="54.3" r=".9" fill="#fbf8f0" stroke-width=".5"/><circle cx="63.2" cy="53.8" r=".9" fill="#fbf8f0" stroke-width=".5"/><circle cx="64.8" cy="52.9" r=".9" fill="#fbf8f0" stroke-width=".5"/><circle cx="66.4" cy="51.6" r=".9" fill="#fbf8f0" stroke-width=".5"/><path d="M48,30 Q44,12 60,12 Q76,12 72,30 Q76,38 70,41 L50,41 Q44,38 48,30Z" fill="#1f1a17"/><circle cx="49" cy="39" r="3" fill="#1f1a17"/><circle cx="71" cy="39" r="3" fill="#1f1a17"/><ellipse cx="60" cy="26" rx="9" ry="11" fill="#a8704f"/><path d="M51,23 Q52,13 60,14 Q69,13 70,24 Q65,18 58,19 Q54,19 51,23Z" fill="#1f1a17"/><circle cx="56.3" cy="26.5" r=".85" fill="#2b2420" stroke="none"/><circle cx="63.7" cy="26.5" r=".85" fill="#2b2420" stroke="none"/><circle cx="54.5" cy="30" r="1.6" fill="#e88a7a" opacity=".45" stroke="none"/><circle cx="65.5" cy="30" r="1.6" fill="#e88a7a" opacity=".45" stroke="none"/><ellipse cx="60" cy="32.6" rx="1.9" ry="1" fill="#c0392b"/></g>
   </svg></div>
     <div class="lbl">Voor mannen</div><p>Pak, of een mooie blazer met pantalon, overhemd, das optioneel, nette lederen schoenen.</p>
-    <div class="lbl">Voor vrouwen</div><p>Elegante jurk, chique pantalon met blouse of een jumpsuit; hakken of nette flats.</p></div></div>
+    <div class="lbl">Voor vrouwen</div><p>Elegante jurk, chique pantalon met blouse of een jumpsuit; hakken of nette flats.</p><button class="share" type="button" data-p="/chic/" data-t="Dresscode: Chic. Wat dat betekent:"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>Delen of op uitnodiging zetten</button><p class="muted copied" hidden></p></div></div>
   <p class="foot"><a id="all" href="/alle-dresscodes/">Alle dresscodes</a></p>
 </main>
 <script>
@@ -348,9 +359,13 @@ function figureSVG(kind,o,i,label){
 const UI = {
   nl:{ title:"Wat betekent deze dresscode?", ph:"Bijv. black tie, smart casual, tenue de ville…",
        men:"Voor mannen", women:"Voor vrouwen", im:"Illustratie: man in", iw:"Illustratie: vrouw in", none:"Die dresscode ken ik niet. Probeer een andere schrijfwijze.", maybe:"Bedoel je:", label:"Typ een dresscode", lang:"nl",
+       share:"Delen of op uitnodiging zetten", st:n=>`Dresscode: ${n}. Wat dat betekent:`, copied:"Link gekopieerd. Plak hem in je uitnodiging of bericht.",
+       often:"Dresscodes die je vaak ziet", occ:"Per gelegenheid",
        all:"Alle dresscodes", allUrl:"/alle-dresscodes/", home:"/", pt:n=>`Dresscode ${n}: wat trek je aan? | Welke dresscode` },
   en:{ title:"What does this dress code mean?", ph:"E.g. black tie, smart casual, cocktail…",
        men:"For men", women:"For women", im:"Illustration: man in", iw:"Illustration: woman in", none:"I don't know that dress code. Try another spelling.", maybe:"Did you mean:", label:"Type a dress code", lang:"en",
+       share:"Share or add to an invitation", st:n=>`Dress code: ${n}. What it means:`, copied:"Link copied. Paste it into your invitation or message.",
+       often:"Dress codes you'll often see", occ:"By occasion",
        all:"All dress codes", allUrl:"/en/all-dress-codes/", home:"/en/", pt:n=>`${n} dress code: what to wear | Welke dresscode` }
 };
 
@@ -598,6 +613,12 @@ function score(q, keys){
   return best;
 }
 
+const SHARE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>';
+const escA = s => String(s).replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+function shareBtn(l, path, text){
+  return `<button class="share" type="button" data-p="${escA(path)}" data-t="${escA(text)}">${SHARE_ICON}${UI[l].share}</button><p class="muted copied" hidden></p>`;
+}
+
 const out=document.getElementById("out"), q=document.getElementById("q"), segs=[...document.querySelectorAll(".seg button")];
 const esc = s => s.replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
 const B=document.body.dataset;
@@ -609,7 +630,7 @@ if(!B.lang){ try { const s=localStorage.getItem("dc-lang"); if(s==="en"||s==="nl
 if(B.home && B.lang==="nl"){ try { if(localStorage.getItem("dc-lang")==="en") location.replace("/en/"); } catch(e){} }
 const initial = B.code ? "" : out.innerHTML;
 let moved = false;
-const T0 = document.title, L0 = lang;
+const T0 = document.title, L0 = lang, P0 = location.pathname;
 function setUrl(p){
   if(!/^https?:/.test(location.protocol) || location.pathname===p) return;
   try { history.replaceState(null,"",p); moved=true; } catch(e){}
@@ -617,7 +638,7 @@ function setUrl(p){
 
 function run(){
   const t=UI[lang], v=norm(q.value);
-  if(v.length<2){ out.innerHTML=initial; if(moved||B.code){ setUrl(t.home); document.title = lang===L0 && !B.code ? T0 : t.title; } return; }
+  if(v.length<2){ out.innerHTML=initial; if(moved||B.code){ setUrl(B.code || lang!==L0 ? t.home : P0); document.title = lang===L0 && !B.code ? T0 : t.title; } return; }
   let best=null, bs=40;
   for(const x of INDEX){ const s=score(v,x.keys); if(s>bs){ bs=s; best=x.c; } }
   if(!best){ out.innerHTML=`<p class="muted">${t.none}</p>`; return; }
@@ -628,7 +649,7 @@ function run(){
   const figs = L ? `<div class="figs">${figureSVG('m',L[0],idx,esc(t.im+' '+name))}${figureSVG('w',L[1],idx,esc(t.iw+' '+name))}</div>` : "";
   out.innerHTML=unsure+`<div class="card"><h2>${esc(name)}</h2><p>${esc(u)}</p>${figs}
     <div class="lbl">${t.men}</div><p>${esc(m)}</p>
-    <div class="lbl">${t.women}</div><p>${esc(w)}</p></div>`;
+    <div class="lbl">${t.women}</div><p>${esc(w)}</p>${shareBtn(lang, pathOf(best,lang), t.st(name))}</div>`;
 }
 function applyLang(){
   const t=UI[lang];
@@ -643,11 +664,22 @@ function applyLang(){
 }
 segs.forEach(b => b.addEventListener("click", () => {
   lang=b.dataset.l; try{localStorage.setItem("dc-lang",lang);}catch(e){}
-  if(B.page==="all"){ location.href=UI[lang].allUrl; return; }
+  if(B.nlurl){ location.href = lang==="en" ? B.enurl : B.nlurl; return; }
   applyLang(); if(norm(q.value).length<2) setUrl(UI[lang].home);
 }));
 q.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); q.blur(); } });
 q.addEventListener("input", run);
+out.addEventListener("click", async e => {
+  const b=e.target.closest(".share"); if(!b) return;
+  const url="https://welkedresscode.nl"+b.dataset.p, text=b.dataset.t, msg=b.nextElementSibling;
+  if(navigator.share){
+    try { await navigator.share({ title:document.title, text, url }); return; }
+    catch(err){ if(err && err.name==="AbortError") return; }
+  }
+  try { await navigator.clipboard.writeText(text+" "+url); msg.textContent=UI[lang].copied; }
+  catch(err){ msg.textContent=text+" "+url; }
+  msg.hidden=false;
+});
 if(B.code){ const c=CODES.find(x=>x.n===B.code); if(c) q.value=nameOf(c,lang); }
 applyLang();
 </script>

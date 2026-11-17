@@ -13,8 +13,9 @@ const app = fs.readFileSync(path.join(ROOT, "src/app.html"), "utf8");
 const script = app.match(/<script>([\s\S]*)<\/script>/)[1];
 const dataPart = script.split("const out=")[0];
 const ctx = {};
-vm.runInNewContext(dataPart + "\n;this.R={CODES,LOOKS,UI,figureSVG,norm};", ctx);
-const { CODES, LOOKS, UI, figureSVG, norm } = ctx.R;
+vm.runInNewContext(dataPart + "\n;this.R={CODES,LOOKS,UI,figureSVG,norm,shareBtn};", ctx);
+const { CODES, LOOKS, UI, figureSVG, norm, shareBtn } = ctx.R;
+const OCC = JSON.parse(fs.readFileSync(path.join(ROOT, "src/occasions.json"), "utf8"));
 
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
 const slug = s => norm(s).replace(/ /g, "-");
@@ -34,6 +35,10 @@ for (const l of ["nl", "en"]) {
   }
 }
 
+const byName = n => { const c = CODES.find(x => x.n === n); if (!c) throw new Error("Onbekende dresscode in occasions.json: " + n); return c; };
+OCC.forEach(o => o.codes.forEach(byName));
+const occPath = (o, l) => (l === "en" ? "/en/" : "/") + o[l].slug + "/";
+
 const FAVICON = "data:image/svg+xml," + encodeURIComponent(
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#7a4b2a"/><path d="M16 16 L6 10 L6 22Z M16 16 L26 10 L26 22Z" fill="#faf8f5"/><circle cx="16" cy="16" r="3" fill="#faf8f5"/></svg>`);
 
@@ -42,7 +47,20 @@ function card(c, l) {
   const figs = `<div class="figs">${figureSVG("m", L[0], idx, esc(t.im + " " + name))}${figureSVG("w", L[1], idx, esc(t.iw + " " + name))}</div>`;
   return `<div class="card"><h2>${esc(name)}</h2><p>${esc(u)}</p>${figs}
     <div class="lbl">${t.men}</div><p>${esc(m)}</p>
-    <div class="lbl">${t.women}</div><p>${esc(w)}</p></div>`;
+    <div class="lbl">${t.women}</div><p>${esc(w)}</p>${shareBtn(l, pathOf(c, l), t.st(name))}</div>`;
+}
+
+function occCard(o, l) {
+  const t = UI[l], d = o[l], main = byName(o.codes[0]), L = LOOKS[main.n], idx = CODES.indexOf(main);
+  const figs = `<div class="figs">${figureSVG("m", L[0], idx, esc(t.im + " " + nameOf(main, l)))}${figureSVG("w", L[1], idx, esc(t.iw + " " + nameOf(main, l)))}</div>`;
+  const list = o.codes.map(n => { const c = byName(n); return `<li><a href="${pathOf(c, l)}">${esc(nameOf(c, l))}</a> – ${esc(trim(c[l][0], 90))}</li>`; }).join("");
+  const others = OCC.filter(x => x !== o).map(x => `<li><a href="${occPath(x, l)}">${esc(x[l].q)}</a></li>`).join("");
+  return `<div class="card"><h2>${esc(d.q)}</h2><p>${esc(d.intro)}</p>${figs}
+    <div class="lbl">${t.men}</div><p>${esc(d.m)}</p>
+    <div class="lbl">${t.women}</div><p>${esc(d.w)}</p>
+    <h3>${t.often}</h3><ul class="codes">${list}</ul>
+    ${shareBtn(l, occPath(o, l), d.q)}</div>
+    <div class="card" style="margin-top:1rem"><h3 style="margin-top:0">${t.occ}</h3><ul class="all one">${others}</ul></div>`;
 }
 
 function page({ l, title, desc, canonical, alt, og, body, ld, noindex, data }) {
@@ -132,10 +150,33 @@ for (const l of ["nl", "en"]) {
 
   // overzicht
   const sorted = [...CODES].sort((a, b) => nameOf(a, l).localeCompare(nameOf(b, l), l));
-  const list = `<div class="card"><h2>${ALL[l].h}</h2><ul class="all">${sorted.map(c => `<li><a href="${pathOf(c, l)}">${esc(nameOf(c, l))}</a></li>`).join("")}</ul></div>`;
+  const list = `<div class="card"><h2>${ALL[l].h}</h2><ul class="all">${sorted.map(c => `<li><a href="${pathOf(c, l)}">${esc(nameOf(c, l))}</a></li>`).join("")}</ul>
+    <h3>${t.occ}</h3><ul class="all one">${OCC.map(o => `<li><a href="${occPath(o, l)}">${esc(o[l].q)}</a></li>`).join("")}</ul></div>`;
   write(t.allUrl.slice(1) + "index.html", page({
-    l, title: ALL[l].title, desc: ALL[l].desc, canonical: t.allUrl, alt: { nl: UI.nl.allUrl, en: UI.en.allUrl }, body: list, data: { page: "all" },
+    l, title: ALL[l].title, desc: ALL[l].desc, canonical: t.allUrl, alt: { nl: UI.nl.allUrl, en: UI.en.allUrl }, body: list,
+    data: { page: "all", nlurl: UI.nl.allUrl, enurl: UI.en.allUrl },
   }));
+
+  // gelegenheden
+  for (const o of OCC) {
+    const d = o[l], alt = { nl: occPath(o, "nl"), en: occPath(o, "en") };
+    const ld = [
+      { "@context": "https://schema.org", "@type": "FAQPage", inLanguage: l, mainEntity: [
+        { "@type": "Question", name: d.q.replace(/\?$/, "") + "?", acceptedAnswer: { "@type": "Answer", text: d.intro } },
+        { "@type": "Question", name: l === "en" ? "What should men wear?" : "Wat draag je als man?", acceptedAnswer: { "@type": "Answer", text: d.m } },
+        { "@type": "Question", name: l === "en" ? "What should women wear?" : "Wat draag je als vrouw?", acceptedAnswer: { "@type": "Answer", text: d.w } } ] },
+      { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+        { "@type": "ListItem", position: 1, name: SITE, item: BASE + t.home },
+        { "@type": "ListItem", position: 2, name: ALL[l].h, item: BASE + t.allUrl },
+        { "@type": "ListItem", position: 3, name: d.q, item: BASE + occPath(o, l) } ] },
+    ];
+    write(occPath(o, l).slice(1) + "index.html", page({
+      l, title: `${d.q.replace(/\?$/, "")}? ${l === "en" ? "Dress code tips" : "Tips voor man en vrouw"} | ${SITE}`.replace("??", "?"),
+      desc: trim(d.intro, 158), canonical: occPath(o, l), alt, og: `/og/${l}-${d.slug}.jpg`, body: occCard(o, l), ld,
+      data: { page: "occasion", nlurl: alt.nl, enurl: alt.en },
+    }));
+    urls.push({ loc: occPath(o, l), alt, pr: "0.7" });
+  }
   urls.push({ loc: t.allUrl, alt: { nl: UI.nl.allUrl, en: UI.en.allUrl }, pr: "0.6" });
 }
 
@@ -160,6 +201,8 @@ fs.writeFileSync(path.join(ROOT, "tools/og-list.json"), JSON.stringify({
     ...["nl", "en"].map(l => ({ file: `${l}-home.jpg`, title: UI[l].title, sub: l === "en" ? "50 dress codes explained for men and women" : "50 dresscodes uitgelegd voor man en vrouw", m: figureSVG("m", LOOKS["Cocktail"][0], 9, ""), w: figureSVG("w", LOOKS["Cocktail"][1], 9, "") })),
     ...["nl", "en"].flatMap(l => CODES.map((c, i) => ({ file: `${l}-${slug(nameOf(c, l))}.jpg`, title: nameOf(c, l), sub: l === "en" ? "What to wear?" : "Wat trek je aan?",
       m: figureSVG("m", LOOKS[c.n][0], i, ""), w: figureSVG("w", LOOKS[c.n][1], i, "") }))),
+    ...["nl", "en"].flatMap(l => OCC.map(o => { const c = byName(o.codes[0]), i = CODES.indexOf(c);
+      return { file: `${l}-${o[l].slug}.jpg`, title: o[l].q, sub: l === "en" ? "Tips for men and women" : "Tips voor man en vrouw", m: figureSVG("m", LOOKS[c.n][0], i, ""), w: figureSVG("w", LOOKS[c.n][1], i, "") }; })),
   ],
 }));
 

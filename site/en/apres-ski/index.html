@@ -51,8 +51,19 @@
   .foot { margin-top:2.4rem; text-align:center; font-size:.85rem; }
   .foot a { color:var(--muted); text-decoration:none; border-bottom:1px solid var(--line); }
   .foot a:hover { color:var(--accent); }
+  .share { display:inline-flex; align-items:center; gap:8px; margin-top:1.3rem; font:600 .85rem/1 system-ui, sans-serif;
+           padding:10px 15px; border:1px solid var(--line); border-radius:99px; background:transparent; color:var(--fg); cursor:pointer; }
+  .share:hover { border-color:var(--accent); color:var(--accent); }
+  .share svg { width:16px; height:16px; }
+  .copied { margin:.6rem 0 0; word-break:break-word; }
+  .card h3 { font-family:system-ui, sans-serif; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); font-weight:normal; margin:1.2rem 0 .3rem; }
+  .codes { padding-left:1.1rem; margin:.3rem 0; }
+  .codes li { margin:.35rem 0; }
+  .codes a, .card p a { color:var(--fg); }
   .all { list-style:none; padding:0; margin:0; columns:2; column-gap:24px; }
   .all li { margin:.15rem 0; break-inside:avoid; }
+  .all.one { columns:1; }
+  .all.one li { margin:.35rem 0; }
   .all a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line); }
   .all a:hover { color:var(--accent); border-color:var(--accent); }
 </style>
@@ -68,22 +79,22 @@
   </div>
   <input id="q" type="search" enterkeyhint="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="E.g. black tie, smart casual, cocktail…" aria-label="Type a dress code" value="Après-ski">
   <div id="out" aria-live="polite"><div class="card"><h2>Après-ski</h2><p>Warm, cosy ski-resort clothes for after skiing.</p><div class="figs"><svg viewBox="0 0 120 220" role="img" aria-label="Illustration: man in Après-ski" xmlns="http://www.w3.org/2000/svg">
-  <defs><pattern id="ht217" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#fff" opacity=".45"/></pattern><pattern id="fp216" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#c53b30"/><path d="M0,1 L2,3 L4,1" fill="none" stroke="#f7f4ee" stroke-width=".6" opacity=".55"/></pattern></defs>
+  <defs><pattern id="ht243" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#fff" opacity=".45"/></pattern><pattern id="fp242" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#c53b30"/><path d="M0,1 L2,3 L4,1" fill="none" stroke="#f7f4ee" stroke-width=".6" opacity=".55"/></pattern></defs>
   <rect x="1" y="1" width="118" height="218" rx="14" fill="#f4e2b3"/>
-  <rect x="1" y="1" width="118" height="218" rx="14" fill="url(#ht217)"/>
+  <rect x="1" y="1" width="118" height="218" rx="14" fill="url(#ht243)"/>
   <path transform="translate(100 34) scale(1.1)" d="M0,-5 L1.2,-1.2 L5,0 L1.2,1.2 L0,5 L-1.2,1.2 L-5,0 L-1.2,-1.2Z" fill="#fffaf0" stroke="none" opacity=".9"/><path transform="translate(18 72) scale(0.8)" d="M0,-5 L1.2,-1.2 L5,0 L1.2,1.2 L0,5 L-1.2,1.2 L-5,0 L-1.2,-1.2Z" fill="#fffaf0" stroke="none" opacity=".9"/><path transform="translate(104 150) scale(0.6)" d="M0,-5 L1.2,-1.2 L5,0 L1.2,1.2 L0,5 L-1.2,1.2 L-5,0 L-1.2,-1.2Z" fill="#fffaf0" stroke="none" opacity=".9"/>
   <ellipse cx="60" cy="208" rx="32" ry="4.5" fill="#2b2420" opacity=".13"/>
-  <g stroke="#2b2420" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"><path d="M40,118 L80,118 L77,204 L63,204 L60,135 L57,204 L43,204Z" fill="#43608a"/><rect x="42" y="190" width="15" height="17" rx="3" fill="#4a3a2e"/><rect x="63" y="190" width="15" height="17" rx="3" fill="#4a3a2e"/><polygon points="36,54 28,58 24,112 33,113 38,70" fill="url(#fp216)"/><polygon points="84,54 92,58 96,112 87,113 82,70" fill="url(#fp216)"/><circle cx="28.5" cy="116" r="4" fill="#d9a47e"/><circle cx="91.5" cy="116" r="4" fill="#d9a47e"/><path d="M36,54 Q60,47 84,54 L81,119 L39,119 Z" fill="url(#fp216)"/><path d="M52,50 Q60,58 68,50" fill="none"/><rect x="39" y="112" width="42" height="7" fill="url(#fp216)"/><rect x="55" y="36" width="10" height="14" fill="#d9a47e"/><ellipse cx="50" cy="27" rx="2" ry="3" fill="#d9a47e"/><ellipse cx="70" cy="27" rx="2" ry="3" fill="#d9a47e"/><ellipse cx="60" cy="26" rx="10" ry="12" fill="#d9a47e"/><path d="M49.5,25 Q48,9 61,9 Q73,9 71,23 Q70,16 62,16 Q54,15 52,22 Q51,25 49.5,27Z" fill="#8a5a2b"/><circle cx="56" cy="27" r=".9" fill="#2b2420" stroke="none"/><circle cx="64" cy="27" r=".9" fill="#2b2420" stroke="none"/><path d="M57.5,32.5 Q60,34.5 62.5,32.5" fill="none" stroke-width=".9"/></g>
+  <g stroke="#2b2420" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"><path d="M40,118 L80,118 L77,204 L63,204 L60,135 L57,204 L43,204Z" fill="#43608a"/><rect x="42" y="190" width="15" height="17" rx="3" fill="#4a3a2e"/><rect x="63" y="190" width="15" height="17" rx="3" fill="#4a3a2e"/><polygon points="36,54 28,58 24,112 33,113 38,70" fill="url(#fp242)"/><polygon points="84,54 92,58 96,112 87,113 82,70" fill="url(#fp242)"/><circle cx="28.5" cy="116" r="4" fill="#d9a47e"/><circle cx="91.5" cy="116" r="4" fill="#d9a47e"/><path d="M36,54 Q60,47 84,54 L81,119 L39,119 Z" fill="url(#fp242)"/><path d="M52,50 Q60,58 68,50" fill="none"/><rect x="39" y="112" width="42" height="7" fill="url(#fp242)"/><rect x="55" y="36" width="10" height="14" fill="#d9a47e"/><ellipse cx="50" cy="27" rx="2" ry="3" fill="#d9a47e"/><ellipse cx="70" cy="27" rx="2" ry="3" fill="#d9a47e"/><ellipse cx="60" cy="26" rx="10" ry="12" fill="#d9a47e"/><path d="M49.5,25 Q48,9 61,9 Q73,9 71,23 Q70,16 62,16 Q54,15 52,22 Q51,25 49.5,27Z" fill="#8a5a2b"/><circle cx="56" cy="27" r=".9" fill="#2b2420" stroke="none"/><circle cx="64" cy="27" r=".9" fill="#2b2420" stroke="none"/><path d="M57.5,32.5 Q60,34.5 62.5,32.5" fill="none" stroke-width=".9"/></g>
   </svg><svg viewBox="0 0 120 220" role="img" aria-label="Illustration: woman in Après-ski" xmlns="http://www.w3.org/2000/svg">
-  <defs><pattern id="ht219" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#fff" opacity=".45"/></pattern><pattern id="fp218" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#f7f4ee"/><path d="M0,1 L2,3 L4,1" fill="none" stroke="#b9bcc2" stroke-width=".6" opacity=".55"/></pattern></defs>
+  <defs><pattern id="ht245" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#fff" opacity=".45"/></pattern><pattern id="fp244" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="4" fill="#f7f4ee"/><path d="M0,1 L2,3 L4,1" fill="none" stroke="#b9bcc2" stroke-width=".6" opacity=".55"/></pattern></defs>
   <rect x="1" y="1" width="118" height="218" rx="14" fill="#e6d7ee"/>
-  <rect x="1" y="1" width="118" height="218" rx="14" fill="url(#ht219)"/>
+  <rect x="1" y="1" width="118" height="218" rx="14" fill="url(#ht245)"/>
   <path transform="translate(100 34) scale(1.1)" d="M0,-5 L1.2,-1.2 L5,0 L1.2,1.2 L0,5 L-1.2,1.2 L-5,0 L-1.2,-1.2Z" fill="#fffaf0" stroke="none" opacity=".9"/><path transform="translate(18 72) scale(0.8)" d="M0,-5 L1.2,-1.2 L5,0 L1.2,1.2 L0,5 L-1.2,1.2 L-5,0 L-1.2,-1.2Z" fill="#fffaf0" stroke="none" opacity=".9"/><path transform="translate(104 150) scale(0.6)" d="M0,-5 L1.2,-1.2 L5,0 L1.2,1.2 L0,5 L-1.2,1.2 L-5,0 L-1.2,-1.2Z" fill="#fffaf0" stroke="none" opacity=".9"/>
   <ellipse cx="60" cy="208" rx="32" ry="4.5" fill="#2b2420" opacity=".13"/>
-  <g stroke="#2b2420" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"><polygon points="51,118 58,118 57.5,202 53,202" fill="#7a4e35"/><polygon points="69,118 62,118 62.5,202 67,202" fill="#7a4e35"/><rect x="50.5" y="182" width="8.5" height="24" rx="2" fill="#f7f4ee"/><rect x="61" y="182" width="8.5" height="24" rx="2" fill="#f7f4ee"/><path d="M49,99 L71,99 L69,205 L62,205 L60,124 L58,205 L51,205Z" fill="#1e1c20"/><polygon points="44,53 38,57 35,108 40,109 44,68" fill="url(#fp218)"/><polygon points="76,53 82,57 85,108 80,109 76,68" fill="url(#fp218)"/><circle cx="37.5" cy="112" r="3.2" fill="#7a4e35"/><circle cx="82.5" cy="112" r="3.2" fill="#7a4e35"/><path d="M44,52 Q60,47 76,52 L71,100 L49,100 Z" fill="url(#fp218)"/><rect x="56.5" y="35" width="7" height="15" fill="#7a4e35"/><path d="M53,50.5 Q60,56 67,50.5" fill="none"/><path d="M48,30 Q44,12 60,12 Q76,12 72,30 Q76,38 70,41 L50,41 Q44,38 48,30Z" fill="#3b2a20"/><circle cx="49" cy="39" r="3" fill="#3b2a20"/><circle cx="71" cy="39" r="3" fill="#3b2a20"/><ellipse cx="60" cy="26" rx="9" ry="11" fill="#7a4e35"/><path d="M51,23 Q52,13 60,14 Q69,13 70,24 Q65,18 58,19 Q54,19 51,23Z" fill="#3b2a20"/><circle cx="56.3" cy="26.5" r=".85" fill="#2b2420" stroke="none"/><circle cx="63.7" cy="26.5" r=".85" fill="#2b2420" stroke="none"/><circle cx="54.5" cy="30" r="1.6" fill="#e88a7a" opacity=".45" stroke="none"/><circle cx="65.5" cy="30" r="1.6" fill="#e88a7a" opacity=".45" stroke="none"/><ellipse cx="60" cy="32.6" rx="1.9" ry="1" fill="#c0392b"/></g>
+  <g stroke="#2b2420" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"><polygon points="51,118 58,118 57.5,202 53,202" fill="#7a4e35"/><polygon points="69,118 62,118 62.5,202 67,202" fill="#7a4e35"/><rect x="50.5" y="182" width="8.5" height="24" rx="2" fill="#f7f4ee"/><rect x="61" y="182" width="8.5" height="24" rx="2" fill="#f7f4ee"/><path d="M49,99 L71,99 L69,205 L62,205 L60,124 L58,205 L51,205Z" fill="#1e1c20"/><polygon points="44,53 38,57 35,108 40,109 44,68" fill="url(#fp244)"/><polygon points="76,53 82,57 85,108 80,109 76,68" fill="url(#fp244)"/><circle cx="37.5" cy="112" r="3.2" fill="#7a4e35"/><circle cx="82.5" cy="112" r="3.2" fill="#7a4e35"/><path d="M44,52 Q60,47 76,52 L71,100 L49,100 Z" fill="url(#fp244)"/><rect x="56.5" y="35" width="7" height="15" fill="#7a4e35"/><path d="M53,50.5 Q60,56 67,50.5" fill="none"/><path d="M48,30 Q44,12 60,12 Q76,12 72,30 Q76,38 70,41 L50,41 Q44,38 48,30Z" fill="#3b2a20"/><circle cx="49" cy="39" r="3" fill="#3b2a20"/><circle cx="71" cy="39" r="3" fill="#3b2a20"/><ellipse cx="60" cy="26" rx="9" ry="11" fill="#7a4e35"/><path d="M51,23 Q52,13 60,14 Q69,13 70,24 Q65,18 58,19 Q54,19 51,23Z" fill="#3b2a20"/><circle cx="56.3" cy="26.5" r=".85" fill="#2b2420" stroke="none"/><circle cx="63.7" cy="26.5" r=".85" fill="#2b2420" stroke="none"/><circle cx="54.5" cy="30" r="1.6" fill="#e88a7a" opacity=".45" stroke="none"/><circle cx="65.5" cy="30" r="1.6" fill="#e88a7a" opacity=".45" stroke="none"/><ellipse cx="60" cy="32.6" rx="1.9" ry="1" fill="#c0392b"/></g>
   </svg></div>
     <div class="lbl">For men</div><p>Chunky jumper, jeans or ski trousers, snow boots.</p>
-    <div class="lbl">For women</div><p>Knitted jumper, leggings or jeans, moon boots.</p></div></div>
+    <div class="lbl">For women</div><p>Knitted jumper, leggings or jeans, moon boots.</p><button class="share" type="button" data-p="/en/apres-ski/" data-t="Dress code: Après-ski. What it means:"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>Share or add to an invitation</button><p class="muted copied" hidden></p></div></div>
   <p class="foot"><a id="all" href="/en/all-dress-codes/">All dress codes</a></p>
 </main>
 <script>
@@ -348,9 +359,13 @@ function figureSVG(kind,o,i,label){
 const UI = {
   nl:{ title:"Wat betekent deze dresscode?", ph:"Bijv. black tie, smart casual, tenue de ville…",
        men:"Voor mannen", women:"Voor vrouwen", im:"Illustratie: man in", iw:"Illustratie: vrouw in", none:"Die dresscode ken ik niet. Probeer een andere schrijfwijze.", maybe:"Bedoel je:", label:"Typ een dresscode", lang:"nl",
+       share:"Delen of op uitnodiging zetten", st:n=>`Dresscode: ${n}. Wat dat betekent:`, copied:"Link gekopieerd. Plak hem in je uitnodiging of bericht.",
+       often:"Dresscodes die je vaak ziet", occ:"Per gelegenheid",
        all:"Alle dresscodes", allUrl:"/alle-dresscodes/", home:"/", pt:n=>`Dresscode ${n}: wat trek je aan? | Welke dresscode` },
   en:{ title:"What does this dress code mean?", ph:"E.g. black tie, smart casual, cocktail…",
        men:"For men", women:"For women", im:"Illustration: man in", iw:"Illustration: woman in", none:"I don't know that dress code. Try another spelling.", maybe:"Did you mean:", label:"Type a dress code", lang:"en",
+       share:"Share or add to an invitation", st:n=>`Dress code: ${n}. What it means:`, copied:"Link copied. Paste it into your invitation or message.",
+       often:"Dress codes you'll often see", occ:"By occasion",
        all:"All dress codes", allUrl:"/en/all-dress-codes/", home:"/en/", pt:n=>`${n} dress code: what to wear | Welke dresscode` }
 };
 
@@ -598,6 +613,12 @@ function score(q, keys){
   return best;
 }
 
+const SHARE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>';
+const escA = s => String(s).replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+function shareBtn(l, path, text){
+  return `<button class="share" type="button" data-p="${escA(path)}" data-t="${escA(text)}">${SHARE_ICON}${UI[l].share}</button><p class="muted copied" hidden></p>`;
+}
+
 const out=document.getElementById("out"), q=document.getElementById("q"), segs=[...document.querySelectorAll(".seg button")];
 const esc = s => s.replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
 const B=document.body.dataset;
@@ -609,7 +630,7 @@ if(!B.lang){ try { const s=localStorage.getItem("dc-lang"); if(s==="en"||s==="nl
 if(B.home && B.lang==="nl"){ try { if(localStorage.getItem("dc-lang")==="en") location.replace("/en/"); } catch(e){} }
 const initial = B.code ? "" : out.innerHTML;
 let moved = false;
-const T0 = document.title, L0 = lang;
+const T0 = document.title, L0 = lang, P0 = location.pathname;
 function setUrl(p){
   if(!/^https?:/.test(location.protocol) || location.pathname===p) return;
   try { history.replaceState(null,"",p); moved=true; } catch(e){}
@@ -617,7 +638,7 @@ function setUrl(p){
 
 function run(){
   const t=UI[lang], v=norm(q.value);
-  if(v.length<2){ out.innerHTML=initial; if(moved||B.code){ setUrl(t.home); document.title = lang===L0 && !B.code ? T0 : t.title; } return; }
+  if(v.length<2){ out.innerHTML=initial; if(moved||B.code){ setUrl(B.code || lang!==L0 ? t.home : P0); document.title = lang===L0 && !B.code ? T0 : t.title; } return; }
   let best=null, bs=40;
   for(const x of INDEX){ const s=score(v,x.keys); if(s>bs){ bs=s; best=x.c; } }
   if(!best){ out.innerHTML=`<p class="muted">${t.none}</p>`; return; }
@@ -628,7 +649,7 @@ function run(){
   const figs = L ? `<div class="figs">${figureSVG('m',L[0],idx,esc(t.im+' '+name))}${figureSVG('w',L[1],idx,esc(t.iw+' '+name))}</div>` : "";
   out.innerHTML=unsure+`<div class="card"><h2>${esc(name)}</h2><p>${esc(u)}</p>${figs}
     <div class="lbl">${t.men}</div><p>${esc(m)}</p>
-    <div class="lbl">${t.women}</div><p>${esc(w)}</p></div>`;
+    <div class="lbl">${t.women}</div><p>${esc(w)}</p>${shareBtn(lang, pathOf(best,lang), t.st(name))}</div>`;
 }
 function applyLang(){
   const t=UI[lang];
@@ -643,11 +664,22 @@ function applyLang(){
 }
 segs.forEach(b => b.addEventListener("click", () => {
   lang=b.dataset.l; try{localStorage.setItem("dc-lang",lang);}catch(e){}
-  if(B.page==="all"){ location.href=UI[lang].allUrl; return; }
+  if(B.nlurl){ location.href = lang==="en" ? B.enurl : B.nlurl; return; }
   applyLang(); if(norm(q.value).length<2) setUrl(UI[lang].home);
 }));
 q.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); q.blur(); } });
 q.addEventListener("input", run);
+out.addEventListener("click", async e => {
+  const b=e.target.closest(".share"); if(!b) return;
+  const url="https://welkedresscode.nl"+b.dataset.p, text=b.dataset.t, msg=b.nextElementSibling;
+  if(navigator.share){
+    try { await navigator.share({ title:document.title, text, url }); return; }
+    catch(err){ if(err && err.name==="AbortError") return; }
+  }
+  try { await navigator.clipboard.writeText(text+" "+url); msg.textContent=UI[lang].copied; }
+  catch(err){ msg.textContent=text+" "+url; }
+  msg.hidden=false;
+});
 if(B.code){ const c=CODES.find(x=>x.n===B.code); if(c) q.value=nameOf(c,lang); }
 applyLang();
 </script>
