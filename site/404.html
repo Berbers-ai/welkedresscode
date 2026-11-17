@@ -615,13 +615,21 @@ function setUrl(p){
   try { history.replaceState(null,"",p); moved=true; } catch(e){}
 }
 
-function run(){
+// --- bezoekersteller (GoatCounter) ---
+let gcT=null, gcLast="";
+function gc(vars){ try { if(window.goatcounter && window.goatcounter.count) window.goatcounter.count(vars); } catch(e){} }
+function track(key, vars){ clearTimeout(gcT); gcT=setTimeout(()=>{ if(key===gcLast) return; gcLast=key; gc(vars); }, 1500); }
+
+function run(typed){
   const t=UI[lang], v=norm(q.value);
+  if(typed && v.length<2) clearTimeout(gcT);
   if(v.length<2){ out.innerHTML=initial; if(moved||B.code){ setUrl(B.code || lang!==L0 ? t.home : P0); document.title = lang===L0 && !B.code ? T0 : t.title; } return; }
   let best=null, bs=40;
   for(const x of INDEX){ const s=score(v,x.keys); if(s>bs){ bs=s; best=x.c; } }
-  if(!best){ out.innerHTML=`<p class="muted">${t.none}</p>`; return; }
-  if(bs>=72){ setUrl(pathOf(best,lang)); document.title=t.pt(nameOf(best,lang)); }
+  const term=v.slice(0,60);
+  if(!best){ out.innerHTML=`<p class="muted">${t.none}</p>`; if(typed) track("nf:"+term,{path:"niet-gevonden: "+term,title:"Niet gevonden",event:true}); return; }
+  if(bs>=72){ setUrl(pathOf(best,lang)); document.title=t.pt(nameOf(best,lang)); if(typed) track("p:"+pathOf(best,lang),{path:pathOf(best,lang),title:document.title}); }
+  else if(typed) track("m:"+term,{path:"bedoel-je: "+term+" → "+best.n,title:"Twijfelachtige zoekterm",event:true});
   const [u,m,w]=best[lang], name = lang==="en" ? (best.ne||best.n) : best.n;
   const unsure = bs<72 ? `<p class="muted" style="margin:0 0 .5rem">${t.maybe}</p>` : "";
   const L=LOOKS[best.n], idx=CODES.indexOf(best);
@@ -647,10 +655,11 @@ segs.forEach(b => b.addEventListener("click", () => {
   applyLang(); if(norm(q.value).length<2) setUrl(UI[lang].home);
 }));
 q.addEventListener("keydown", e => { if(e.key==="Enter"){ e.preventDefault(); q.blur(); } });
-q.addEventListener("input", run);
+q.addEventListener("input", () => run(true));
 out.addEventListener("click", async e => {
   const b=e.target.closest(".share"); if(!b) return;
   const url="https://welkedresscode.nl"+b.dataset.p, text=b.dataset.t, msg=b.nextElementSibling;
+  gc({path:"gedeeld: "+b.dataset.p, title:"Deelknop", event:true});
   if(navigator.share){
     try { await navigator.share({ title:document.title, text, url }); return; }
     catch(err){ if(err && err.name==="AbortError") return; }
@@ -662,5 +671,6 @@ out.addEventListener("click", async e => {
 if(B.code){ const c=CODES.find(x=>x.n===B.code); if(c) q.value=nameOf(c,lang); }
 applyLang();
 </script>
+<script data-goatcounter="https://welkedresscode.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

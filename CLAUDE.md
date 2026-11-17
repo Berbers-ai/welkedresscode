@@ -7,6 +7,7 @@
   1. `node tools/build.mjs` → maakt `site/` met homepage NL (`/`) en EN (`/en/`), een pagina per dresscode per taal (`/black-tie/`, `/en/black-tie/`), overzichtspagina's, 404, sitemap.xml en robots.txt.
   2. `python3 tools/og.py` → deelplaatjes in `site/og/` (alleen nodig als namen of illustraties veranderen).
 - Bewerk nooit bestanden in `site/` met de hand.
+- Bezoekersteller: GoatCounter (welkedresscode.goatcounter.com). Getypte zoekopdrachten tellen als paginaweergave (gevonden), of als gebeurtenis `niet-gevonden: …` / `bedoel-je: …`; de deelknop als `gedeeld: …`.
 - Gelegenheidspagina's (bruiloft, gala, …) staan in `src/occasions.json`; dresscodenamen daarin moeten exact overeenkomen met `CODES`.
 - Ontwerp: één zoekvak, NL/EN-schakelaar en één deelknop onder de kaart (op verzoek van de gebruiker); verder geen extra knoppen. Retro-illustraties (pastel, rasterpunten). Geen andere stijl zonder overleg.
 - Gebruiker communiceert in het Nederlands, wil korte uitleg en niet-technische stappen. "Bouw maar" = wijzigingen doorvoeren, bouwen, testen en pushen naar `main`.
