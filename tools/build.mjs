@@ -104,7 +104,7 @@ function write(rel, html) {
 }
 
 // opnieuw beginnen (deelplaatjes in /site/og blijven staan)
-for (const e of fs.existsSync(OUT) ? fs.readdirSync(OUT) : []) if (e !== "og") fs.rmSync(path.join(OUT, e), { recursive: true });
+for (const e of fs.existsSync(OUT) ? fs.readdirSync(OUT) : []) if (e !== "og" && e !== "pins") fs.rmSync(path.join(OUT, e), { recursive: true });
 
 const urls = [];
 const HOME = {
@@ -204,6 +204,17 @@ fs.writeFileSync(path.join(ROOT, "tools/og-list.json"), JSON.stringify({
     ...["nl", "en"].flatMap(l => OCC.map(o => { const c = byName(o.codes[0]), i = CODES.indexOf(c);
       return { file: `${l}-${o[l].slug}.jpg`, title: o[l].q, sub: l === "en" ? "Tips for men and women" : "Tips voor man en vrouw", m: figureSVG("m", LOOKS[c.n][0], i, ""), w: figureSVG("w", LOOKS[c.n][1], i, "") }; })),
   ],
+}));
+
+// lijst voor de Pinterest-plaatjes
+fs.writeFileSync(path.join(ROOT, "tools/pin-list.json"), JSON.stringify({
+  items: ["nl", "en"].flatMap(l => [
+    ...CODES.map((c, i) => ({ l, kind: "code", file: `${l}-${slug(nameOf(c, l))}.jpg`, title: nameOf(c, l), u: c[l][0], m: c[l][1], w: c[l][2],
+      link: BASE + pathOf(c, l), svgM: figureSVG("m", LOOKS[c.n][0], i, ""), svgW: figureSVG("w", LOOKS[c.n][1], i, "") })),
+    ...OCC.map(o => { const c = byName(o.codes[0]), i = CODES.indexOf(c);
+      return { l, kind: "occ", file: `${l}-${o[l].slug}.jpg`, title: o[l].q, u: o[l].intro, m: o[l].m, w: o[l].w, codes: o.codes.slice(0, 4).map(n => nameOf(byName(n), l)),
+        link: BASE + occPath(o, l), svgM: figureSVG("m", LOOKS[c.n][0], i, ""), svgW: figureSVG("w", LOOKS[c.n][1], i, "") }; }),
+  ]),
 }));
 
 console.log(`Klaar: ${urls.length} pagina's + 404, sitemap en robots.txt in /site`);
