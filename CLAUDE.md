@@ -1,8 +1,12 @@
 # Projectnotities voor Claude
 
-- Site: https://welkedresscode.nl (Netlify, deployt automatisch vanaf `main`).
-- Alles staat in `index.html`: de lijst `CODES` (naam, Engelse naam `ne`, zoektermen `a`, teksten `nl`/`en` = [uitleg, mannen, vrouwen]) en `LOOKS` (outfits voor de illustraties, per naam).
+- Site: https://welkedresscode.nl (Netlify, publiceert automatisch de map `site/` bij elke push naar `main`).
+- Bron: `src/app.html` bevat alles: de lijst `CODES` (naam `n`, Engelse naam `ne`, zoektermen `a`, teksten `nl`/`en` = [uitleg, mannen, vrouwen]), `LOOKS` (outfits voor de illustraties, per naam) en de app-logica.
 - Elke dresscode in `CODES` moet een item in `LOOKS` hebben met dezelfde `n`.
+- Bouwen na elke wijziging (uitkomst wordt meegecommit):
+  1. `node tools/build.mjs` → maakt `site/` met homepage NL (`/`) en EN (`/en/`), een pagina per dresscode per taal (`/black-tie/`, `/en/black-tie/`), overzichtspagina's, 404, sitemap.xml en robots.txt.
+  2. `python3 tools/og.py` → deelplaatjes in `site/og/` (alleen nodig als namen of illustraties veranderen).
+- Bewerk nooit bestanden in `site/` met de hand.
 - Ontwerp: één zoekvak, NL/EN-schakelaar, geen extra knoppen. Retro-illustraties (pastel, rasterpunten). Geen andere stijl zonder overleg.
-- Gebruiker communiceert in het Nederlands, wil korte uitleg en niet-technische stappen.
+- Gebruiker communiceert in het Nederlands, wil korte uitleg en niet-technische stappen. "Bouw maar" = wijzigingen doorvoeren, bouwen, testen en pushen naar `main`.
 - Na wijzigingen: test zoeken (typfouten), check beide talen, controleer illustraties op telefoonformaat.

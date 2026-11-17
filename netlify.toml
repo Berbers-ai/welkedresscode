@@ -1,2 +1,10 @@
+# De site wordt lokaal gebouwd (node tools/build.mjs && python3 tools/og.py)
+# en de uitkomst in /site staat in git. Netlify hoeft niets te bouwen.
 [build]
-  publish = "."
+  publish = "site"
+  command = ""
+
+[[headers]]
+  for = "/og/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://welkedresscode.nl/sitemap.xml
