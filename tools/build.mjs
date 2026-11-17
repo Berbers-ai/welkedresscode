@@ -37,6 +37,7 @@ for (const l of ["nl", "en"]) {
 
 const byName = n => { const c = CODES.find(x => x.n === n); if (!c) throw new Error("Onbekende dresscode in occasions.json: " + n); return c; };
 OCC.forEach(o => o.codes.forEach(byName));
+const shortOcc = (o, l) => { const x = o[l].q.replace(/\?$/, "").replace(l === "en" ? /^What to wear (to|on) (a |an |the |your )?/ : /^Wat trek je aan (naar|op|met) (een |het |de |je )?/, ""); return x[0].toUpperCase() + x.slice(1); };
 const occPath = (o, l) => (l === "en" ? "/en/" : "/") + o[l].slug + "/";
 
 const FAVICON = "data:image/svg+xml," + encodeURIComponent(
@@ -63,7 +64,7 @@ function occCard(o, l) {
     <div class="card" style="margin-top:1rem"><h3 style="margin-top:0">${t.occ}</h3><ul class="all one">${others}</ul></div>`;
 }
 
-function page({ l, title, desc, canonical, alt, og, body, ld, noindex, data }) {
+function page({ l, title, desc, canonical, alt, og, body, ld, noindex, data, after }) {
   const t = UI[l];
   const head = [
     `<title>${esc(title)}</title>`,
@@ -92,7 +93,7 @@ function page({ l, title, desc, canonical, alt, og, body, ld, noindex, data }) {
     .replace(`data-l="nl" lang="nl"`, `data-l="nl" lang="nl" aria-pressed="${l === "nl"}"`)
     .replace(`data-l="en" lang="en"`, `data-l="en" lang="en" aria-pressed="${l === "en"}"`)
     .replace('spellcheck="false">', `spellcheck="false" placeholder="${esc(t.ph)}" aria-label="${esc(t.label)}"${data.code ? ` value="${esc(nameOf(CODES.find(c => c.n === data.code), l))}"` : ""}>`)
-    .replace('<div id="out" aria-live="polite"></div>', `<div id="out" aria-live="polite">${body || ""}</div>`)
+    .replace('<div id="out" aria-live="polite"></div>', `<div id="out" aria-live="polite">${body || ""}</div>${after || ""}`)
     .replace('<a id="all" href="/alle-dresscodes/">Alle dresscodes</a>', `<a id="all" href="${t.allUrl}">${t.all}</a>`);
   return html;
 }
@@ -142,8 +143,10 @@ for (const l of ["nl", "en"]) {
         { "@type": "ListItem", position: 2, name: ALL[l].h, item: BASE + t.allUrl },
         { "@type": "ListItem", position: 3, name, item: BASE + pathOf(c, l) } ] },
     ];
+    const rel = OCC.filter(o => o.codes.includes(c.n));
+    const after = rel.length ? `<p id="rel" class="rel">${l === "en" ? "Useful for:" : "Handig bij:"} ${rel.map(o => `<a href="${occPath(o, l)}">${esc(shortOcc(o, l))}</a>`).join(" · ")}</p>` : "";
     write(pathOf(c, l).slice(1) + "index.html", page({
-      l, title: t.pt(name), desc, canonical: pathOf(c, l), alt, og: ogOf(c, l), body: card(c, l), ld, data: { code: c.n },
+      l, title: t.pt(name), desc, canonical: pathOf(c, l), alt, og: ogOf(c, l), body: card(c, l), ld, data: { code: c.n }, after,
     }));
     urls.push({ loc: pathOf(c, l), alt, pr: "0.8" });
   }

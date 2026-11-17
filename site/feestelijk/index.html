@@ -63,6 +63,9 @@
   .all { list-style:none; padding:0; margin:0; columns:2; column-gap:24px; }
   .all li { margin:.15rem 0; break-inside:avoid; }
   .all.one { columns:1; }
+  .rel { margin:1rem 2px 0; font-size:.95rem; color:var(--muted); line-height:1.7; }
+  .rel a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line); }
+  .rel a:hover { color:var(--accent); border-color:var(--accent); }
   .all.one li { margin:.35rem 0; }
   .all a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line); }
   .all a:hover { color:var(--accent); border-color:var(--accent); }
@@ -94,7 +97,7 @@
   <g stroke="#2b2420" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"><polygon points="51,118 58,118 57.5,202 53,202" fill="#d9a47e"/><polygon points="69,118 62,118 62.5,202 67,202" fill="#d9a47e"/><path d="M50,205 Q50,201 55,201 L60,203 L59,206Z" fill="#2b2420"/><path d="M70,205 Q70,201 65,201 L60,203 L61,206Z" fill="#2b2420"/><path d="M51,205 L51,208 M69,205 L69,208" fill="none" stroke-width="1.6"/><path d="M50,99 L70,99 Q92,138 99,154 Q60,166 21,154 Q28,138 50,99Z" fill="#f7f4ee"/><path d="M50,99 L70,99 Q90,135 97,152 Q60,162 23,152 Q30,135 50,99Z" fill="url(#fp27)"/><polygon points="44,53 38,57 35,108 40,109 44,68" fill="#d9a47e"/><polygon points="76,53 82,57 85,108 80,109 76,68" fill="#d9a47e"/><circle cx="37.5" cy="112" r="3.2" fill="#d9a47e"/><circle cx="82.5" cy="112" r="3.2" fill="#d9a47e"/><path d="M44,52 Q60,47 76,52 L71,100 L49,100 Z" fill="url(#fp27)"/><rect x="56.5" y="35" width="7" height="15" fill="#d9a47e"/><path d="M51,50.5 Q60,61 69,50.5 Q60,48 51,50.5Z" fill="#d9a47e"/><rect x="48.5" y="97" width="23" height="4" fill="#d6b04a"/><path d="M48,30 Q44,12 60,12 Q76,12 72,30 Q76,38 70,41 L50,41 Q44,38 48,30Z" fill="#8a5a2b"/><circle cx="49" cy="39" r="3" fill="#8a5a2b"/><circle cx="71" cy="39" r="3" fill="#8a5a2b"/><ellipse cx="60" cy="26" rx="9" ry="11" fill="#d9a47e"/><path d="M51,23 Q52,13 60,14 Q69,13 70,24 Q65,18 58,19 Q54,19 51,23Z" fill="#8a5a2b"/><circle cx="56.3" cy="26.5" r=".85" fill="#2b2420" stroke="none"/><circle cx="63.7" cy="26.5" r=".85" fill="#2b2420" stroke="none"/><circle cx="54.5" cy="30" r="1.6" fill="#e88a7a" opacity=".45" stroke="none"/><circle cx="65.5" cy="30" r="1.6" fill="#e88a7a" opacity=".45" stroke="none"/><ellipse cx="60" cy="32.6" rx="1.9" ry="1" fill="#c0392b"/></g>
   </svg></div>
     <div class="lbl">Voor mannen</div><p>Pak of blazer in fluweel, of met een vrolijke das of pochet.</p>
-    <div class="lbl">Voor vrouwen</div><p>Jurk of rok met pailletten, satijn, fluweel of opvallende accessoires.</p><button class="share" type="button" data-p="/feestelijk/" data-t="Dresscode: Feestelijk. Wat dat betekent:"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>Delen of op uitnodiging zetten</button><p class="muted copied" hidden></p></div></div>
+    <div class="lbl">Voor vrouwen</div><p>Jurk of rok met pailletten, satijn, fluweel of opvallende accessoires.</p><button class="share" type="button" data-p="/feestelijk/" data-t="Dresscode: Feestelijk. Wat dat betekent:"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>Delen of op uitnodiging zetten</button><p class="muted copied" hidden></p></div></div><p id="rel" class="rel">Handig bij: <a href="/dresscode-kerstborrel/">Kerstborrel of kerstdiner</a> · <a href="/dresscode-bedrijfsfeest/">Bedrijfsfeest</a> · <a href="/wat-aan-met-oud-en-nieuw/">Oud en nieuw</a></p>
   <p class="foot"><a id="all" href="/alle-dresscodes/">Alle dresscodes</a></p>
 </main>
 <script>
@@ -642,13 +645,15 @@ function gc(vars){ try { if(window.goatcounter && window.goatcounter.count) wind
 function track(key, vars){ clearTimeout(gcT); gcT=setTimeout(()=>{ if(key===gcLast) return; gcLast=key; gc(vars); }, 1500); }
 
 function run(typed){
-  const t=UI[lang], v=norm(q.value);
+  const t=UI[lang], v=norm(q.value), rel=document.getElementById("rel");
+  if(rel) rel.hidden = true;
   if(typed && v.length<2) clearTimeout(gcT);
   if(v.length<2){ out.innerHTML=initial; if(moved||B.code){ setUrl(B.code || lang!==L0 ? t.home : P0); document.title = lang===L0 && !B.code ? T0 : t.title; } return; }
   let best=null, bs=40;
   for(const x of INDEX){ const s=score(v,x.keys); if(s>bs){ bs=s; best=x.c; } }
   const term=v.slice(0,60);
   if(!best){ out.innerHTML=`<p class="muted">${t.none}</p>`; if(typed) track("nf:"+term,{path:"niet-gevonden: "+term,title:"Niet gevonden",event:true}); return; }
+  if(rel && best.n===B.code && lang===B.lang) rel.hidden = false;
   if(bs>=72){ setUrl(pathOf(best,lang)); document.title=t.pt(nameOf(best,lang)); if(typed) track("p:"+pathOf(best,lang),{path:pathOf(best,lang),title:document.title}); }
   else if(typed) track("m:"+term,{path:"bedoel-je: "+term+" → "+best.n,title:"Twijfelachtige zoekterm",event:true});
   const [u,m,w]=best[lang], name = lang==="en" ? (best.ne||best.n) : best.n;

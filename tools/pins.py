@@ -78,7 +78,15 @@ with sync_playwright() as p:
     b.close()
 
 for l, rs in rows.items():
-    with open(csv_dir / f"pinterest-{l}.csv", "w", newline="", encoding="utf-8") as f:
+    old = csv_dir / f"pinterest-{l}.csv"
+    if old.exists():
+        seen = {r["Title"] for r in csv.DictReader(open(old, encoding="utf-8"))}
+        fresh = [r for r in rs if r["Title"] not in seen]
+        if fresh:
+            with open(csv_dir / f"pinterest-{l}-nieuw.csv", "w", newline="", encoding="utf-8") as f:
+                w = csv.DictWriter(f, fieldnames=list(fresh[0].keys())); w.writeheader(); w.writerows(fresh)
+            print(l, len(fresh), "nieuwe pins in", f"pinterest-{l}-nieuw.csv")
+    with open(old, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rs[0].keys()))
         w.writeheader(); w.writerows(rs)
 print({l: len(r) for l, r in rows.items()}, "pins; afbeeldingen in site/pins, upload-bestanden in pinterest/")

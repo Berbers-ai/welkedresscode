@@ -1,121 +1,449 @@
 [
- { "nl": { "slug":"dresscode-bruiloft", "q":"Wat trek je aan naar een bruiloft?",
-     "intro":"Kijk eerst op de uitnodiging: daar staat vaak een dresscode. Staat er niets, kies dan voor semi-formeel: netjes, feestelijk en afgestemd op tijd en plek. Een strandbruiloft vraagt om iets anders dan een diner in een kasteel.",
-     "m":"Een pak met das is bijna altijd goed. Overdag en buiten mag het lichter van kleur en zonder das; 's avonds kies je donker.",
-     "w":"Een feestelijke jurk of jumpsuit. Draag geen wit of crème en niets dat met de bruid concurreert. Op gras of zand: blokhakken of platte schoenen." },
-   "en": { "slug":"what-to-wear-to-a-wedding", "q":"What to wear to a wedding",
-     "intro":"Check the invitation first: it often states a dress code. If it doesn't, go semi-formal: smart, festive and suited to the time and venue. A beach wedding calls for something different from a dinner at a castle.",
-     "m":"A suit and tie is almost always right. In the daytime and outdoors it can be lighter in colour and without a tie; in the evening, go dark.",
-     "w":"A festive dress or jumpsuit. Don't wear white or cream, or anything that competes with the bride. On grass or sand: block heels or flats." },
-   "codes":["Bruiloftsgast","Semi-formeel","Cocktail","Black tie","Tuinfeest","Beach formal","Rustic chic"] },
-
- { "nl": { "slug":"dresscode-gala", "q":"Wat trek je aan naar een gala?",
-     "intro":"Een gala is meestal het meest formele feest van het jaar. Staat er geen dresscode op de uitnodiging, ga dan uit van black tie. Schoolgala's en bedrijfsgala's zijn soms iets minder streng, maar te netjes bestaat hier bijna niet.",
-     "m":"Een smoking met zwart strikje. Geen smoking? Dan een donker pak met effen das en gepoetste schoenen.",
-     "w":"Een lange avondjurk, of een elegante cocktailjurk als het minder formeel is. Maak het af met sieraden en een clutch." },
-   "en": { "slug":"what-to-wear-to-a-gala", "q":"What to wear to a gala",
-     "intro":"A gala is usually the most formal party of the year. If the invitation states no dress code, assume black tie. School and company galas are sometimes a little less strict, but it's hard to be overdressed here.",
-     "m":"A tuxedo with a black bow tie. No tuxedo? Then a dark suit with a plain tie and polished shoes.",
-     "w":"A floor-length evening gown, or an elegant cocktail dress if it's less formal. Finish with jewellery and a clutch." },
-   "codes":["Black tie","Black tie optional","White tie","Creative black tie","Glam","Formeel"] },
-
- { "nl": { "slug":"dresscode-kerstborrel", "q":"Wat trek je aan naar een kerstborrel of kerstdiner?",
-     "intro":"Bij een kerstborrel mag het netjes én feestelijk: denk aan fluweel, glitter of een vrolijke kleur. Op het werk houd je het iets ingetogener dan bij vrienden. Staat er 'feestelijk' op de uitnodiging, dan mag je echt uitpakken.",
-     "m":"Een blazer of pak, eventueel in fluweel of met een vrolijke das, strik of pochet. Bij een informele borrel kan een mooie trui over een overhemd ook.",
-     "w":"Een jurk of rok met pailletten, satijn of fluweel, of een chique broek met een feestelijke top." },
-   "en": { "slug":"christmas-party-dress-code", "q":"What to wear to a Christmas party",
-     "intro":"A Christmas party can be smart and festive: think velvet, sparkle or a cheerful colour. Keep it a little more modest at work than with friends. If the invitation says 'festive', you can really go for it.",
-     "m":"A blazer or suit, perhaps in velvet or with a cheerful tie, bow tie or pocket square. At a casual party, a nice jumper over a shirt also works.",
-     "w":"A dress or skirt in sequins, satin or velvet, or smart trousers with a festive top." },
-   "codes":["Feestelijk","Cocktail","Smart casual","Glam","Netjes"] },
-
- { "nl": { "slug":"dresscode-sollicitatiegesprek", "q":"Wat trek je aan naar een sollicitatiegesprek?",
-     "intro":"Kleed je één stapje netter dan de mensen die er al werken. Kijk vooraf op de website of sociale media van het bedrijf hoe medewerkers erbij lopen. Verzorgd en goed passend is belangrijker dan duur.",
-     "m":"Bij banken, advocatuur en overheid: een donker pak met das. Bij de meeste andere bedrijven: een blazer met chino of pantalon en een overhemd, zonder das.",
-     "w":"Een broekpak, of een pantalon of rok met blouse en blazer. Kies gesloten schoenen en houd sieraden en make-up rustig." },
-   "en": { "slug":"what-to-wear-to-a-job-interview", "q":"What to wear to a job interview",
-     "intro":"Dress one step smarter than the people who already work there. Check the company's website or social media beforehand to see what staff wear. Neat and well-fitting matters more than expensive.",
-     "m":"For banks, law firms and government: a dark suit and tie. For most other companies: a blazer with chinos or trousers and a shirt, no tie.",
-     "w":"A trouser suit, or trousers or a skirt with a blouse and blazer. Choose closed shoes and keep jewellery and make-up understated." },
-   "codes":["Business formal","Business casual","Smart casual","Netjes"] },
-
- { "nl": { "slug":"dresscode-bedrijfsfeest", "q":"Wat trek je aan naar een bedrijfsfeest?",
-     "intro":"Je bent op een feest, maar wel met je collega's en leidinggevenden. Kies iets wat feestelijker is dan je werkkleding, maar wat je ook op kantoor zou durven dragen. Volg altijd de dresscode op de uitnodiging: bij een themafeest wordt verkleden gewaardeerd.",
-     "m":"Een blazer met chino of pantalon en een mooi overhemd. Bij een chiquer feest een pak; een das is meestal niet nodig.",
-     "w":"Een nette jurk, jumpsuit of een broek met een feestelijke top. Liever niet te kort of te bloot." },
-   "en": { "slug":"office-party-dress-code", "q":"What to wear to an office party",
-     "intro":"It's a party, but with your colleagues and managers. Choose something more festive than your work clothes, yet something you'd also dare wear at the office. Always follow the dress code on the invitation: at a theme party, dressing up is appreciated.",
-     "m":"A blazer with chinos or trousers and a nice shirt. For a smarter party, a suit; a tie is usually not needed.",
-     "w":"A smart dress, jumpsuit or trousers with a festive top. Avoid anything too short or revealing." },
-   "codes":["Smart casual","Cocktail","Feestelijk","Themafeest","Business casual"] },
-
- { "nl": { "slug":"dresscode-netwerkborrel", "q":"Wat trek je aan naar een netwerkborrel?",
-     "intro":"Je wilt professioneel overkomen en tegelijk aanspreekbaar zijn. Business casual is bijna altijd de veilige keuze. Komen mensen rechtstreeks uit hun werk, dan is wat je die dag op kantoor draagt meestal prima.",
-     "m":"Een chino of pantalon met overhemd, eventueel een blazer. Een das is alleen nodig in formele branches.",
-     "w":"Een pantalon of rok met blouse of fijne trui, eventueel een blazer. Kies schoenen waarop je lang kunt staan." },
-   "en": { "slug":"networking-event-dress-code", "q":"What to wear to a networking event",
-     "intro":"You want to look professional yet approachable. Business casual is almost always the safe choice. If people come straight from work, what you wore to the office that day is usually fine.",
-     "m":"Chinos or trousers with a shirt, optionally a blazer. A tie is only needed in formal industries.",
-     "w":"Trousers or a skirt with a blouse or fine knit, optionally a blazer. Choose shoes you can stand in for a long time." },
-   "codes":["Business casual","Smart casual","Business formal"] },
-
- { "nl": { "slug":"wat-aan-naar-theater-of-opera", "q":"Wat trek je aan naar het theater of de opera?",
-     "intro":"Voor een gewone voorstelling is smart casual tegenwoordig prima. Bij een première, gala-avond of de opera kleden veel mensen zich netter, soms zelfs in black tie. Kijk op je kaartje of de site van het theater of er een dresscode geldt.",
-     "m":"Een chino of pantalon met overhemd en blazer. Bij een première of operagala een donker pak of smoking.",
-     "w":"Een nette jurk of een pantalon met mooie top. Bij een première mag het een cocktail- of avondjurk zijn." },
-   "en": { "slug":"what-to-wear-to-the-theatre-or-opera", "q":"What to wear to the theatre or opera",
-     "intro":"For an ordinary performance, smart casual is fine these days. At a premiere, gala night or the opera, many people dress up more, sometimes even in black tie. Check your ticket or the theatre's website for a dress code.",
-     "m":"Chinos or trousers with a shirt and blazer. For a premiere or opera gala, a dark suit or tuxedo.",
-     "w":"A smart dress or trousers with a nice top. For a premiere, a cocktail or evening dress is fine." },
-   "codes":["Smart casual","Netjes","Cocktail","Black tie"] },
-
- { "nl": { "slug":"wat-aan-naar-chic-restaurant", "q":"Wat trek je aan naar een chic restaurant?",
-     "intro":"Sommige toprestaurants vragen om een colbert ('jacket required'); dat staat meestal op hun website. Bij de meeste chique restaurants is smart casual tot cocktail goed. Sportkleding, slippers en petten laat je thuis.",
-     "m":"Een blazer met pantalon of donkere jeans en een overhemd. In restaurants met 'jacket required' is een colbert verplicht, soms ook een das.",
-     "w":"Een elegante jurk, of een mooie broek met zijden top of blouse." },
-   "en": { "slug":"what-to-wear-to-a-fancy-restaurant", "q":"What to wear to a fancy restaurant",
-     "intro":"Some top restaurants require a jacket ('jacket required'); it's usually stated on their website. At most upscale restaurants, smart casual to cocktail is fine. Leave sportswear, flip-flops and caps at home.",
-     "m":"A blazer with trousers or dark jeans and a shirt. Where a jacket is required, a sport coat is a must, sometimes a tie too.",
-     "w":"An elegant dress, or nice trousers with a silk top or blouse." },
-   "codes":["Jacket required","Smart casual","Elegant casual","Chic","Cocktail"] },
-
- { "nl": { "slug":"wat-aan-op-eerste-date", "q":"Wat trek je aan op een eerste date?",
-     "intro":"Draag iets waarin je je prettig voelt en jezelf bent, net iets netter dan normaal. Stem het af op de plek: een wandeling vraagt om iets anders dan een cocktailbar. Verzorgd haar, schone schoenen en een frisse geur doen meer dan een duur merk.",
-     "m":"Donkere jeans of chino, een goed passend overhemd of fijne trui en nette sneakers of loafers.",
-     "w":"Een jeans of broek met een mooie top, of een eenvoudige jurk. Kies schoenen waarop je goed kunt lopen." },
-   "en": { "slug":"what-to-wear-on-a-first-date", "q":"What to wear on a first date",
-     "intro":"Wear something you feel comfortable and yourself in, just a little smarter than usual. Match it to the venue: a walk calls for something different from a cocktail bar. Neat hair, clean shoes and smelling fresh count for more than an expensive brand.",
-     "m":"Dark jeans or chinos, a well-fitting shirt or fine knit and smart sneakers or loafers.",
-     "w":"Jeans or trousers with a nice top, or a simple dress. Choose shoes you can walk in." },
-   "codes":["Smart casual","Casual","Elegant casual","Parisian chic"] },
-
- { "nl": { "slug":"wat-aan-met-oud-en-nieuw", "q":"Wat trek je aan met oud en nieuw?",
-     "intro":"Oudjaarsavond is hét moment voor glitter en glans. Thuis met vrienden is het feestelijk-casual, in een club of op een gala mag het helemaal glamoureus. Ga je om twaalf uur naar buiten, neem dan een warme jas mee.",
-     "m":"Een donker pak of een blazer met een mooi overhemd, eventueel met een glimmend detail zoals een fluwelen jasje of een strik.",
-     "w":"Pailletten, metallic of satijn: een jurk, jumpsuit of top die glinstert. Een zwarte jurk met opvallende sieraden werkt ook." },
-   "en": { "slug":"new-years-eve-outfit", "q":"What to wear on New Year's Eve",
-     "intro":"New Year's Eve is the moment for sparkle and shine. At home with friends it's festive-casual; at a club or gala it can be fully glamorous. Going outside at midnight? Bring a warm coat.",
-     "m":"A dark suit or a blazer with a nice shirt, perhaps with a shiny touch like a velvet jacket or a bow tie.",
-     "w":"Sequins, metallics or satin: a dress, jumpsuit or top that sparkles. A black dress with statement jewellery works too." },
-   "codes":["Glam","Feestelijk","Cocktail","All black"] },
-
- { "nl": { "slug":"wat-aan-naar-diploma-uitreiking", "q":"Wat trek je aan naar een diploma-uitreiking?",
-     "intro":"Een diploma-uitreiking is een feestelijk moment, maar meestal geen gala. Netjes of smart casual is de norm, voor zowel de geslaagde als de gasten. Ga je het podium op, kies dan schoenen waarop je zeker loopt.",
-     "m":"Een chino of pantalon met overhemd, eventueel een blazer of pak. Een das mag, maar hoeft niet.",
-     "w":"Een nette jurk, of een rok of broek met blouse. Kies schoenen waarop je makkelijk loopt." },
-   "en": { "slug":"what-to-wear-to-a-graduation", "q":"What to wear to a graduation",
-     "intro":"A graduation is a festive occasion, but usually not a gala. Smart or smart casual is the norm, for graduates and guests alike. If you're going on stage, choose shoes you can walk in confidently.",
-     "m":"Chinos or trousers with a shirt, optionally a blazer or suit. A tie is optional.",
-     "w":"A smart dress, or a skirt or trousers with a blouse. Choose shoes that are easy to walk in." },
-   "codes":["Netjes","Smart casual","Semi-formeel"] },
-
- { "nl": { "slug":"wat-aan-naar-doop-of-communie", "q":"Wat trek je aan naar een doop of communie?",
-     "intro":"Deze vieringen vinden meestal in een kerk plaats, dus kleed je netjes en ingetogen. Bedek je schouders en draag niets te korts of doorzichtigs. Na de kerk volgt vaak een feest; daar past dezelfde outfit prima bij.",
-     "m":"Een pak, of een blazer met pantalon en overhemd. Een das staat netjes, maar is niet verplicht.",
-     "w":"Een jurk of rok tot de knie of langer, met bedekte schouders (een vestje of blazer kan ook). Liever geen wit: dat is voor de dopeling of de communicant." },
-   "en": { "slug":"what-to-wear-to-a-christening", "q":"What to wear to a christening or communion",
-     "intro":"These celebrations usually take place in a church, so dress smartly and modestly. Cover your shoulders and avoid anything too short or sheer. A party often follows; the same outfit works well there.",
-     "m":"A suit, or a blazer with trousers and a shirt. A tie is smart but not required.",
-     "w":"A dress or skirt to the knee or longer, with covered shoulders (a cardigan or blazer works too). Avoid white; that's for the child." },
-   "codes":["Zondagse kleren","Bedekkende kleding","Netjes","Semi-formeel"] }
+ {
+  "nl": {
+   "slug": "dresscode-bruiloft",
+   "q": "Wat trek je aan naar een bruiloft?",
+   "intro": "Kijk eerst op de uitnodiging: daar staat vaak een dresscode. Staat er niets, kies dan voor semi-formeel: netjes, feestelijk en afgestemd op tijd en plek. Een strandbruiloft vraagt om iets anders dan een diner in een kasteel.",
+   "m": "Een pak met das is bijna altijd goed. Overdag en buiten mag het lichter van kleur en zonder das; 's avonds kies je donker.",
+   "w": "Een feestelijke jurk of jumpsuit. Draag geen wit of crème en niets dat met de bruid concurreert. Op gras of zand: blokhakken of platte schoenen."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-wedding",
+   "q": "What to wear to a wedding",
+   "intro": "Check the invitation first: it often states a dress code. If it doesn't, go semi-formal: smart, festive and suited to the time and venue. A beach wedding calls for something different from a dinner at a castle.",
+   "m": "A suit and tie is almost always right. In the daytime and outdoors it can be lighter in colour and without a tie; in the evening, go dark.",
+   "w": "A festive dress or jumpsuit. Don't wear white or cream, or anything that competes with the bride. On grass or sand: block heels or flats."
+  },
+  "codes": [
+   "Bruiloftsgast",
+   "Semi-formeel",
+   "Cocktail",
+   "Black tie",
+   "Tuinfeest",
+   "Beach formal",
+   "Rustic chic"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "dresscode-gala",
+   "q": "Wat trek je aan naar een gala?",
+   "intro": "Een gala is meestal het meest formele feest van het jaar. Staat er geen dresscode op de uitnodiging, ga dan uit van black tie. Schoolgala's en bedrijfsgala's zijn soms iets minder streng, maar te netjes bestaat hier bijna niet.",
+   "m": "Een smoking met zwart strikje. Geen smoking? Dan een donker pak met effen das en gepoetste schoenen.",
+   "w": "Een lange avondjurk, of een elegante cocktailjurk als het minder formeel is. Maak het af met sieraden en een clutch."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-gala",
+   "q": "What to wear to a gala",
+   "intro": "A gala is usually the most formal party of the year. If the invitation states no dress code, assume black tie. School and company galas are sometimes a little less strict, but it's hard to be overdressed here.",
+   "m": "A tuxedo with a black bow tie. No tuxedo? Then a dark suit with a plain tie and polished shoes.",
+   "w": "A floor-length evening gown, or an elegant cocktail dress if it's less formal. Finish with jewellery and a clutch."
+  },
+  "codes": [
+   "Black tie",
+   "Black tie optional",
+   "White tie",
+   "Creative black tie",
+   "Glam",
+   "Formeel"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "dresscode-kerstborrel",
+   "q": "Wat trek je aan naar een kerstborrel of kerstdiner?",
+   "intro": "Bij een kerstborrel mag het netjes én feestelijk: denk aan fluweel, glitter of een vrolijke kleur. Op het werk houd je het iets ingetogener dan bij vrienden. Staat er 'feestelijk' op de uitnodiging, dan mag je echt uitpakken.",
+   "m": "Een blazer of pak, eventueel in fluweel of met een vrolijke das, strik of pochet. Bij een informele borrel kan een mooie trui over een overhemd ook.",
+   "w": "Een jurk of rok met pailletten, satijn of fluweel, of een chique broek met een feestelijke top."
+  },
+  "en": {
+   "slug": "christmas-party-dress-code",
+   "q": "What to wear to a Christmas party",
+   "intro": "A Christmas party can be smart and festive: think velvet, sparkle or a cheerful colour. Keep it a little more modest at work than with friends. If the invitation says 'festive', you can really go for it.",
+   "m": "A blazer or suit, perhaps in velvet or with a cheerful tie, bow tie or pocket square. At a casual party, a nice jumper over a shirt also works.",
+   "w": "A dress or skirt in sequins, satin or velvet, or smart trousers with a festive top."
+  },
+  "codes": [
+   "Feestelijk",
+   "Cocktail",
+   "Smart casual",
+   "Glam",
+   "Netjes"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "dresscode-sollicitatiegesprek",
+   "q": "Wat trek je aan naar een sollicitatiegesprek?",
+   "intro": "Kleed je één stapje netter dan de mensen die er al werken. Kijk vooraf op de website of sociale media van het bedrijf hoe medewerkers erbij lopen. Verzorgd en goed passend is belangrijker dan duur.",
+   "m": "Bij banken, advocatuur en overheid: een donker pak met das. Bij de meeste andere bedrijven: een blazer met chino of pantalon en een overhemd, zonder das.",
+   "w": "Een broekpak, of een pantalon of rok met blouse en blazer. Kies gesloten schoenen en houd sieraden en make-up rustig."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-job-interview",
+   "q": "What to wear to a job interview",
+   "intro": "Dress one step smarter than the people who already work there. Check the company's website or social media beforehand to see what staff wear. Neat and well-fitting matters more than expensive.",
+   "m": "For banks, law firms and government: a dark suit and tie. For most other companies: a blazer with chinos or trousers and a shirt, no tie.",
+   "w": "A trouser suit, or trousers or a skirt with a blouse and blazer. Choose closed shoes and keep jewellery and make-up understated."
+  },
+  "codes": [
+   "Business formal",
+   "Business casual",
+   "Smart casual",
+   "Netjes"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "dresscode-bedrijfsfeest",
+   "q": "Wat trek je aan naar een bedrijfsfeest?",
+   "intro": "Je bent op een feest, maar wel met je collega's en leidinggevenden. Kies iets wat feestelijker is dan je werkkleding, maar wat je ook op kantoor zou durven dragen. Volg altijd de dresscode op de uitnodiging: bij een themafeest wordt verkleden gewaardeerd.",
+   "m": "Een blazer met chino of pantalon en een mooi overhemd. Bij een chiquer feest een pak; een das is meestal niet nodig.",
+   "w": "Een nette jurk, jumpsuit of een broek met een feestelijke top. Liever niet te kort of te bloot."
+  },
+  "en": {
+   "slug": "office-party-dress-code",
+   "q": "What to wear to an office party",
+   "intro": "It's a party, but with your colleagues and managers. Choose something more festive than your work clothes, yet something you'd also dare wear at the office. Always follow the dress code on the invitation: at a theme party, dressing up is appreciated.",
+   "m": "A blazer with chinos or trousers and a nice shirt. For a smarter party, a suit; a tie is usually not needed.",
+   "w": "A smart dress, jumpsuit or trousers with a festive top. Avoid anything too short or revealing."
+  },
+  "codes": [
+   "Smart casual",
+   "Cocktail",
+   "Feestelijk",
+   "Themafeest",
+   "Business casual"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "dresscode-netwerkborrel",
+   "q": "Wat trek je aan naar een netwerkborrel?",
+   "intro": "Je wilt professioneel overkomen en tegelijk aanspreekbaar zijn. Business casual is bijna altijd de veilige keuze. Komen mensen rechtstreeks uit hun werk, dan is wat je die dag op kantoor draagt meestal prima.",
+   "m": "Een chino of pantalon met overhemd, eventueel een blazer. Een das is alleen nodig in formele branches.",
+   "w": "Een pantalon of rok met blouse of fijne trui, eventueel een blazer. Kies schoenen waarop je lang kunt staan."
+  },
+  "en": {
+   "slug": "networking-event-dress-code",
+   "q": "What to wear to a networking event",
+   "intro": "You want to look professional yet approachable. Business casual is almost always the safe choice. If people come straight from work, what you wore to the office that day is usually fine.",
+   "m": "Chinos or trousers with a shirt, optionally a blazer. A tie is only needed in formal industries.",
+   "w": "Trousers or a skirt with a blouse or fine knit, optionally a blazer. Choose shoes you can stand in for a long time."
+  },
+  "codes": [
+   "Business casual",
+   "Smart casual",
+   "Business formal"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-theater-of-opera",
+   "q": "Wat trek je aan naar het theater of de opera?",
+   "intro": "Voor een gewone voorstelling is smart casual tegenwoordig prima. Bij een première, gala-avond of de opera kleden veel mensen zich netter, soms zelfs in black tie. Kijk op je kaartje of de site van het theater of er een dresscode geldt.",
+   "m": "Een chino of pantalon met overhemd en blazer. Bij een première of operagala een donker pak of smoking.",
+   "w": "Een nette jurk of een pantalon met mooie top. Bij een première mag het een cocktail- of avondjurk zijn."
+  },
+  "en": {
+   "slug": "what-to-wear-to-the-theatre-or-opera",
+   "q": "What to wear to the theatre or opera",
+   "intro": "For an ordinary performance, smart casual is fine these days. At a premiere, gala night or the opera, many people dress up more, sometimes even in black tie. Check your ticket or the theatre's website for a dress code.",
+   "m": "Chinos or trousers with a shirt and blazer. For a premiere or opera gala, a dark suit or tuxedo.",
+   "w": "A smart dress or trousers with a nice top. For a premiere, a cocktail or evening dress is fine."
+  },
+  "codes": [
+   "Smart casual",
+   "Netjes",
+   "Cocktail",
+   "Black tie"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-chic-restaurant",
+   "q": "Wat trek je aan naar een chic restaurant?",
+   "intro": "Sommige toprestaurants vragen om een colbert ('jacket required'); dat staat meestal op hun website. Bij de meeste chique restaurants is smart casual tot cocktail goed. Sportkleding, slippers en petten laat je thuis.",
+   "m": "Een blazer met pantalon of donkere jeans en een overhemd. In restaurants met 'jacket required' is een colbert verplicht, soms ook een das.",
+   "w": "Een elegante jurk, of een mooie broek met zijden top of blouse."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-fancy-restaurant",
+   "q": "What to wear to a fancy restaurant",
+   "intro": "Some top restaurants require a jacket ('jacket required'); it's usually stated on their website. At most upscale restaurants, smart casual to cocktail is fine. Leave sportswear, flip-flops and caps at home.",
+   "m": "A blazer with trousers or dark jeans and a shirt. Where a jacket is required, a sport coat is a must, sometimes a tie too.",
+   "w": "An elegant dress, or nice trousers with a silk top or blouse."
+  },
+  "codes": [
+   "Jacket required",
+   "Smart casual",
+   "Elegant casual",
+   "Chic",
+   "Cocktail"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-op-eerste-date",
+   "q": "Wat trek je aan op een eerste date?",
+   "intro": "Draag iets waarin je je prettig voelt en jezelf bent, net iets netter dan normaal. Stem het af op de plek: een wandeling vraagt om iets anders dan een cocktailbar. Verzorgd haar, schone schoenen en een frisse geur doen meer dan een duur merk.",
+   "m": "Donkere jeans of chino, een goed passend overhemd of fijne trui en nette sneakers of loafers.",
+   "w": "Een jeans of broek met een mooie top, of een eenvoudige jurk. Kies schoenen waarop je goed kunt lopen."
+  },
+  "en": {
+   "slug": "what-to-wear-on-a-first-date",
+   "q": "What to wear on a first date",
+   "intro": "Wear something you feel comfortable and yourself in, just a little smarter than usual. Match it to the venue: a walk calls for something different from a cocktail bar. Neat hair, clean shoes and smelling fresh count for more than an expensive brand.",
+   "m": "Dark jeans or chinos, a well-fitting shirt or fine knit and smart sneakers or loafers.",
+   "w": "Jeans or trousers with a nice top, or a simple dress. Choose shoes you can walk in."
+  },
+  "codes": [
+   "Smart casual",
+   "Casual",
+   "Elegant casual",
+   "Parisian chic"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-met-oud-en-nieuw",
+   "q": "Wat trek je aan met oud en nieuw?",
+   "intro": "Oudjaarsavond is hét moment voor glitter en glans. Thuis met vrienden is het feestelijk-casual, in een club of op een gala mag het helemaal glamoureus. Ga je om twaalf uur naar buiten, neem dan een warme jas mee.",
+   "m": "Een donker pak of een blazer met een mooi overhemd, eventueel met een glimmend detail zoals een fluwelen jasje of een strik.",
+   "w": "Pailletten, metallic of satijn: een jurk, jumpsuit of top die glinstert. Een zwarte jurk met opvallende sieraden werkt ook."
+  },
+  "en": {
+   "slug": "new-years-eve-outfit",
+   "q": "What to wear on New Year's Eve",
+   "intro": "New Year's Eve is the moment for sparkle and shine. At home with friends it's festive-casual; at a club or gala it can be fully glamorous. Going outside at midnight? Bring a warm coat.",
+   "m": "A dark suit or a blazer with a nice shirt, perhaps with a shiny touch like a velvet jacket or a bow tie.",
+   "w": "Sequins, metallics or satin: a dress, jumpsuit or top that sparkles. A black dress with statement jewellery works too."
+  },
+  "codes": [
+   "Glam",
+   "Feestelijk",
+   "Cocktail",
+   "All black"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-diploma-uitreiking",
+   "q": "Wat trek je aan naar een diploma-uitreiking?",
+   "intro": "Een diploma-uitreiking is een feestelijk moment, maar meestal geen gala. Netjes of smart casual is de norm, voor zowel de geslaagde als de gasten. Ga je het podium op, kies dan schoenen waarop je zeker loopt.",
+   "m": "Een chino of pantalon met overhemd, eventueel een blazer of pak. Een das mag, maar hoeft niet.",
+   "w": "Een nette jurk, of een rok of broek met blouse. Kies schoenen waarop je makkelijk loopt."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-graduation",
+   "q": "What to wear to a graduation",
+   "intro": "A graduation is a festive occasion, but usually not a gala. Smart or smart casual is the norm, for graduates and guests alike. If you're going on stage, choose shoes you can walk in confidently.",
+   "m": "Chinos or trousers with a shirt, optionally a blazer or suit. A tie is optional.",
+   "w": "A smart dress, or a skirt or trousers with a blouse. Choose shoes that are easy to walk in."
+  },
+  "codes": [
+   "Netjes",
+   "Smart casual",
+   "Semi-formeel"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-doop-of-communie",
+   "q": "Wat trek je aan naar een doop of communie?",
+   "intro": "Deze vieringen vinden meestal in een kerk plaats, dus kleed je netjes en ingetogen. Bedek je schouders en draag niets te korts of doorzichtigs. Na de kerk volgt vaak een feest; daar past dezelfde outfit prima bij.",
+   "m": "Een pak, of een blazer met pantalon en overhemd. Een das staat netjes, maar is niet verplicht.",
+   "w": "Een jurk of rok tot de knie of langer, met bedekte schouders (een vestje of blazer kan ook). Liever geen wit: dat is voor de dopeling of de communicant."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-christening",
+   "q": "What to wear to a christening or communion",
+   "intro": "These celebrations usually take place in a church, so dress smartly and modestly. Cover your shoulders and avoid anything too short or sheer. A party often follows; the same outfit works well there.",
+   "m": "A suit, or a blazer with trousers and a shirt. A tie is smart but not required.",
+   "w": "A dress or skirt to the knee or longer, with covered shoulders (a cardigan or blazer works too). Avoid white; that's for the child."
+  },
+  "codes": [
+   "Zondagse kleren",
+   "Bedekkende kleding",
+   "Netjes",
+   "Semi-formeel"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-schoolgala",
+   "q": "Wat trek je aan naar een schoolgala?",
+   "intro": "Een schoolgala is vaak het feest waar iedereen zich het mooist aankleedt. Meestal geldt black tie of 'gala', maar kijk wat de school of het feestcomité vraagt. Ga voor iets waarin je je goed voelt en een hele avond kunt dansen.",
+   "m": "Een smoking of een donker pak met strikje of das. Huren is een goede optie als je geen smoking hebt.",
+   "w": "Een lange galajurk of een elegante cocktailjurk. Neem eventueel platte schoenen mee voor op de dansvloer."
+  },
+  "en": {
+   "slug": "what-to-wear-to-prom",
+   "q": "What to wear to prom",
+   "intro": "Prom is often the party where everyone dresses up the most. Usually it's black tie or 'formal', but check what the school or committee asks. Go for something you feel great in and can dance in all night.",
+   "m": "A tuxedo or a dark suit with a bow tie or tie. Renting is a good option if you don't own a tuxedo.",
+   "w": "A floor-length gown or an elegant cocktail dress. Consider bringing flats for the dance floor."
+  },
+  "codes": [
+   "Black tie",
+   "Black tie optional",
+   "Cocktail",
+   "Glam"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-verjaardag",
+   "q": "Wat trek je aan naar een verjaardagsfeest?",
+   "intro": "Dat hangt helemaal af van het soort feest. Een verjaardag thuis is meestal casual of smart casual; een feest in een restaurant of zaal vraagt om iets netters. Staat er een thema of dresscode op de uitnodiging, volg die dan.",
+   "m": "Thuis: jeans of chino met een mooi shirt of overhemd. In een zaal of restaurant: een blazer erbij.",
+   "w": "Thuis: jeans of een broek met een leuke top, of een eenvoudige jurk. Op een groter feest: een feestelijke jurk of jumpsuit."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-birthday-party",
+   "q": "What to wear to a birthday party",
+   "intro": "It all depends on the kind of party. A birthday at home is usually casual or smart casual; a party at a restaurant or venue calls for something smarter. If the invitation mentions a theme or dress code, follow it.",
+   "m": "At home: jeans or chinos with a nice shirt. At a venue or restaurant: add a blazer.",
+   "w": "At home: jeans or trousers with a nice top, or a simple dress. At a bigger party: a festive dress or jumpsuit."
+  },
+  "codes": [
+   "Smart casual",
+   "Casual",
+   "Cocktail",
+   "Themafeest"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-zakendiner",
+   "q": "Wat trek je aan naar een zakendiner?",
+   "intro": "Bij een zakendiner vertegenwoordig je je bedrijf, dus kies voor verzorgd en klassiek. Business casual is vaak genoeg, maar met klanten of directie in een chic restaurant ga je beter voor een pak. Twijfel je, kleed je dan liever iets te netjes.",
+   "m": "Een donker pak of een blazer met pantalon en overhemd. Een das bij formele branches of chique restaurants.",
+   "w": "Een broekpak, mantelpak of nette jurk met blazer. Rustige kleuren en sieraden."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-business-dinner",
+   "q": "What to wear to a business dinner",
+   "intro": "At a business dinner you represent your company, so choose neat and classic. Business casual is often enough, but with clients or senior management at a fine restaurant, a suit is the better choice. When in doubt, dress slightly smarter.",
+   "m": "A dark suit, or a blazer with trousers and a shirt. A tie in formal industries or upscale restaurants.",
+   "w": "A trouser suit, skirt suit or smart dress with a blazer. Understated colours and jewellery."
+  },
+  "codes": [
+   "Business formal",
+   "Business casual",
+   "Lounge suit",
+   "Jacket required"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-uitvaart",
+   "q": "Wat trek je aan naar een uitvaart of begrafenis?",
+   "intro": "Kleed je ingetogen en respectvol, meestal in donkere kleuren. Lees de rouwkaart goed: soms vraagt de familie juist om kleur of iets persoonlijks, zoals de lievelingskleur van de overledene. Dat verzoek gaat altijd voor.",
+   "m": "Een donker pak (zwart, navy of antraciet) met effen overhemd en das. Geen pak? Een donkere pantalon met overhemd en colbert.",
+   "w": "Een donkere, eenvoudige jurk, rok of broekpak. Gesloten schoenen en weinig sieraden. In een kerk: schouders bedekt."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-funeral",
+   "q": "What to wear to a funeral",
+   "intro": "Dress modestly and respectfully, usually in dark colours. Read the funeral notice carefully: sometimes the family asks for colour or something personal, like the deceased's favourite colour. That request always comes first.",
+   "m": "A dark suit (black, navy or charcoal) with a plain shirt and tie. No suit? Dark trousers with a shirt and jacket.",
+   "w": "A dark, simple dress, skirt or trouser suit. Closed shoes and minimal jewellery. In a church: shoulders covered."
+  },
+  "codes": [
+   "Rouwkleding",
+   "Bedekkende kleding",
+   "All black",
+   "Business formal"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-op-cruise",
+   "q": "Wat trek je aan op een cruise?",
+   "intro": "Overdag is het op een cruise vaak ontspannen resortkleding. 's Avonds hebben veel schepen een dresscode voor het restaurant, met één of meer 'formal nights' of 'gala nights'. Kijk vooraf wat jouw rederij vraagt.",
+   "m": "Overdag: linnen broek of short met polo of luchtig overhemd. 's Avonds: een blazer; op een gala-avond een donker pak of smoking.",
+   "w": "Overdag: luchtige jurk of broek met top. 's Avonds: een elegante jurk; op een gala-avond een cocktail- of avondjurk."
+  },
+  "en": {
+   "slug": "what-to-wear-on-a-cruise",
+   "q": "What to wear on a cruise",
+   "intro": "During the day, cruise wear is usually relaxed resort wear. In the evening, many ships have a dress code for the restaurant, with one or more 'formal nights' or 'gala nights'. Check what your cruise line asks beforehand.",
+   "m": "Daytime: linen trousers or shorts with a polo or airy shirt. Evening: a blazer; on a gala night, a dark suit or tuxedo.",
+   "w": "Daytime: an airy dress or trousers with a top. Evening: an elegant dress; on a gala night, a cocktail or evening dress."
+  },
+  "codes": [
+   "Resort wear",
+   "Cocktail",
+   "Black tie optional",
+   "Beach casual",
+   "Nautical"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-op-eerste-werkdag",
+   "q": "Wat trek je aan op je eerste werkdag?",
+   "intro": "Kijk wat je collega's droegen tijdens je sollicitatiegesprek en kies iets dat net zo netjes is, of een tikje netter. Na een paar dagen zie je vanzelf wat gebruikelijk is. Verzorgd en comfortabel is de beste start.",
+   "m": "Meestal business casual: een chino of pantalon met overhemd, eventueel een blazer. In formele omgevingen een pak.",
+   "w": "Een pantalon of rok met blouse of fijne trui, eventueel een blazer. Kies schoenen waarop je de hele dag goed kunt lopen."
+  },
+  "en": {
+   "slug": "what-to-wear-on-your-first-day-at-work",
+   "q": "What to wear on your first day at work",
+   "intro": "Think about what your colleagues wore during your interview and choose something just as smart, or a touch smarter. After a few days you'll see what's usual. Neat and comfortable is the best start.",
+   "m": "Usually business casual: chinos or trousers with a shirt, optionally a blazer. In formal workplaces, a suit.",
+   "w": "Trousers or a skirt with a blouse or fine knit, optionally a blazer. Choose shoes you can walk in all day."
+  },
+  "codes": [
+   "Business casual",
+   "Smart casual",
+   "Business formal",
+   "Netjes"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-babyshower",
+   "q": "Wat trek je aan naar een babyshower?",
+   "intro": "Een babyshower is meestal een gezellige middag, vaak thuis of in een lunchroom. Smart casual of iets vrolijks is ideaal. Soms is er een kleurthema, zoals roze, blauw of pastel; dat staat dan op de uitnodiging.",
+   "m": "Chino of nette jeans met een overhemd of polo. Een pastelkleur past goed bij de sfeer.",
+   "w": "Een luchtige jurk, of een broek of rok met een vrolijke top. Pastel en bloemenprints zijn populair."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-baby-shower",
+   "q": "What to wear to a baby shower",
+   "intro": "A baby shower is usually a relaxed afternoon, often at home or in a café. Smart casual or something cheerful is ideal. Sometimes there's a colour theme, like pink, blue or pastels; the invitation will say so.",
+   "m": "Chinos or smart jeans with a shirt or polo. A pastel colour suits the mood.",
+   "w": "An airy dress, or trousers or a skirt with a cheerful top. Pastels and floral prints are popular."
+  },
+  "codes": [
+   "Smart casual",
+   "Kleurthema",
+   "Tuinfeest",
+   "Casual"
+  ]
+ },
+ {
+  "nl": {
+   "slug": "wat-aan-naar-concert",
+   "q": "Wat trek je aan naar een concert?",
+   "intro": "Bij een pop- of rockconcert draag je wat lekker zit: je staat en danst urenlang. Een klassiek concert in een concertzaal is netter, vooral bij een première of gala. Denk ook aan een jas die je makkelijk kwijt kunt in de garderobe.",
+   "m": "Popconcert: jeans, T-shirt en comfortabele sneakers. Klassiek concert: chino of pantalon met overhemd en eventueel een blazer.",
+   "w": "Popconcert: jeans of short met top en stevige schoenen. Klassiek concert: een nette jurk of pantalon met mooie top."
+  },
+  "en": {
+   "slug": "what-to-wear-to-a-concert",
+   "q": "What to wear to a concert",
+   "intro": "For a pop or rock concert, wear something comfortable: you'll be standing and dancing for hours. A classical concert in a concert hall is smarter, especially at a premiere or gala. Also think about a coat that's easy to check in.",
+   "m": "Pop concert: jeans, a T-shirt and comfortable sneakers. Classical concert: chinos or trousers with a shirt and optionally a blazer.",
+   "w": "Pop concert: jeans or shorts with a top and sturdy shoes. Classical concert: a smart dress or trousers with a nice top."
+  },
+  "codes": [
+   "Casual",
+   "Festival",
+   "Smart casual",
+   "Netjes"
+  ]
+ }
 ]

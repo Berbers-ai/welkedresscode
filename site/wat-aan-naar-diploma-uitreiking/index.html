@@ -63,6 +63,9 @@
   .all { list-style:none; padding:0; margin:0; columns:2; column-gap:24px; }
   .all li { margin:.15rem 0; break-inside:avoid; }
   .all.one { columns:1; }
+  .rel { margin:1rem 2px 0; font-size:.95rem; color:var(--muted); line-height:1.7; }
+  .rel a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line); }
+  .rel a:hover { color:var(--accent); border-color:var(--accent); }
   .all.one li { margin:.35rem 0; }
   .all a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line); }
   .all a:hover { color:var(--accent); border-color:var(--accent); }
@@ -97,7 +100,7 @@
     <div class="lbl">Voor vrouwen</div><p>Een nette jurk, of een rok of broek met blouse. Kies schoenen waarop je makkelijk loopt.</p>
     <h3>Dresscodes die je vaak ziet</h3><ul class="codes"><li><a href="/netjes/">Netjes</a> – Gewoon 'netjes'. Meestal tussen smart casual en zakelijk in.</li><li><a href="/smart-casual/">Smart casual</a> – Verzorgd maar ontspannen. Een van de meest gebruikte (en verwarrende) codes.</li><li><a href="/semi-formeel/">Semi-formeel</a> – Netjes, maar minder streng dan formeel. Veel gebruikt bij bruiloften en recepties.</li></ul>
     <button class="share" type="button" data-p="/wat-aan-naar-diploma-uitreiking/" data-t="Wat trek je aan naar een diploma-uitreiking?"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v14"/></svg>Delen of op uitnodiging zetten</button><p class="muted copied" hidden></p></div>
-    <div class="card" style="margin-top:1rem"><h3 style="margin-top:0">Per gelegenheid</h3><ul class="all one"><li><a href="/dresscode-bruiloft/">Wat trek je aan naar een bruiloft?</a></li><li><a href="/dresscode-gala/">Wat trek je aan naar een gala?</a></li><li><a href="/dresscode-kerstborrel/">Wat trek je aan naar een kerstborrel of kerstdiner?</a></li><li><a href="/dresscode-sollicitatiegesprek/">Wat trek je aan naar een sollicitatiegesprek?</a></li><li><a href="/dresscode-bedrijfsfeest/">Wat trek je aan naar een bedrijfsfeest?</a></li><li><a href="/dresscode-netwerkborrel/">Wat trek je aan naar een netwerkborrel?</a></li><li><a href="/wat-aan-naar-theater-of-opera/">Wat trek je aan naar het theater of de opera?</a></li><li><a href="/wat-aan-naar-chic-restaurant/">Wat trek je aan naar een chic restaurant?</a></li><li><a href="/wat-aan-op-eerste-date/">Wat trek je aan op een eerste date?</a></li><li><a href="/wat-aan-met-oud-en-nieuw/">Wat trek je aan met oud en nieuw?</a></li><li><a href="/wat-aan-naar-doop-of-communie/">Wat trek je aan naar een doop of communie?</a></li></ul></div></div>
+    <div class="card" style="margin-top:1rem"><h3 style="margin-top:0">Per gelegenheid</h3><ul class="all one"><li><a href="/dresscode-bruiloft/">Wat trek je aan naar een bruiloft?</a></li><li><a href="/dresscode-gala/">Wat trek je aan naar een gala?</a></li><li><a href="/dresscode-kerstborrel/">Wat trek je aan naar een kerstborrel of kerstdiner?</a></li><li><a href="/dresscode-sollicitatiegesprek/">Wat trek je aan naar een sollicitatiegesprek?</a></li><li><a href="/dresscode-bedrijfsfeest/">Wat trek je aan naar een bedrijfsfeest?</a></li><li><a href="/dresscode-netwerkborrel/">Wat trek je aan naar een netwerkborrel?</a></li><li><a href="/wat-aan-naar-theater-of-opera/">Wat trek je aan naar het theater of de opera?</a></li><li><a href="/wat-aan-naar-chic-restaurant/">Wat trek je aan naar een chic restaurant?</a></li><li><a href="/wat-aan-op-eerste-date/">Wat trek je aan op een eerste date?</a></li><li><a href="/wat-aan-met-oud-en-nieuw/">Wat trek je aan met oud en nieuw?</a></li><li><a href="/wat-aan-naar-doop-of-communie/">Wat trek je aan naar een doop of communie?</a></li><li><a href="/wat-aan-naar-schoolgala/">Wat trek je aan naar een schoolgala?</a></li><li><a href="/wat-aan-naar-verjaardag/">Wat trek je aan naar een verjaardagsfeest?</a></li><li><a href="/wat-aan-naar-zakendiner/">Wat trek je aan naar een zakendiner?</a></li><li><a href="/wat-aan-naar-uitvaart/">Wat trek je aan naar een uitvaart of begrafenis?</a></li><li><a href="/wat-aan-op-cruise/">Wat trek je aan op een cruise?</a></li><li><a href="/wat-aan-op-eerste-werkdag/">Wat trek je aan op je eerste werkdag?</a></li><li><a href="/wat-aan-naar-babyshower/">Wat trek je aan naar een babyshower?</a></li><li><a href="/wat-aan-naar-concert/">Wat trek je aan naar een concert?</a></li></ul></div></div>
   <p class="foot"><a id="all" href="/alle-dresscodes/">Alle dresscodes</a></p>
 </main>
 <script>
@@ -645,13 +648,15 @@ function gc(vars){ try { if(window.goatcounter && window.goatcounter.count) wind
 function track(key, vars){ clearTimeout(gcT); gcT=setTimeout(()=>{ if(key===gcLast) return; gcLast=key; gc(vars); }, 1500); }
 
 function run(typed){
-  const t=UI[lang], v=norm(q.value);
+  const t=UI[lang], v=norm(q.value), rel=document.getElementById("rel");
+  if(rel) rel.hidden = true;
   if(typed && v.length<2) clearTimeout(gcT);
   if(v.length<2){ out.innerHTML=initial; if(moved||B.code){ setUrl(B.code || lang!==L0 ? t.home : P0); document.title = lang===L0 && !B.code ? T0 : t.title; } return; }
   let best=null, bs=40;
   for(const x of INDEX){ const s=score(v,x.keys); if(s>bs){ bs=s; best=x.c; } }
   const term=v.slice(0,60);
   if(!best){ out.innerHTML=`<p class="muted">${t.none}</p>`; if(typed) track("nf:"+term,{path:"niet-gevonden: "+term,title:"Niet gevonden",event:true}); return; }
+  if(rel && best.n===B.code && lang===B.lang) rel.hidden = false;
   if(bs>=72){ setUrl(pathOf(best,lang)); document.title=t.pt(nameOf(best,lang)); if(typed) track("p:"+pathOf(best,lang),{path:pathOf(best,lang),title:document.title}); }
   else if(typed) track("m:"+term,{path:"bedoel-je: "+term+" → "+best.n,title:"Twijfelachtige zoekterm",event:true});
   const [u,m,w]=best[lang], name = lang==="en" ? (best.ne||best.n) : best.n;

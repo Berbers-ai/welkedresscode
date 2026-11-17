@@ -63,6 +63,9 @@
   .all { list-style:none; padding:0; margin:0; columns:2; column-gap:24px; }
   .all li { margin:.15rem 0; break-inside:avoid; }
   .all.one { columns:1; }
+  .rel { margin:1rem 2px 0; font-size:.95rem; color:var(--muted); line-height:1.7; }
+  .rel a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line); }
+  .rel a:hover { color:var(--accent); border-color:var(--accent); }
   .all.one li { margin:.35rem 0; }
   .all a { color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line); }
   .all a:hover { color:var(--accent); border-color:var(--accent); }
@@ -626,13 +629,15 @@ function gc(vars){ try { if(window.goatcounter && window.goatcounter.count) wind
 function track(key, vars){ clearTimeout(gcT); gcT=setTimeout(()=>{ if(key===gcLast) return; gcLast=key; gc(vars); }, 1500); }
 
 function run(typed){
-  const t=UI[lang], v=norm(q.value);
+  const t=UI[lang], v=norm(q.value), rel=document.getElementById("rel");
+  if(rel) rel.hidden = true;
   if(typed && v.length<2) clearTimeout(gcT);
   if(v.length<2){ out.innerHTML=initial; if(moved||B.code){ setUrl(B.code || lang!==L0 ? t.home : P0); document.title = lang===L0 && !B.code ? T0 : t.title; } return; }
   let best=null, bs=40;
   for(const x of INDEX){ const s=score(v,x.keys); if(s>bs){ bs=s; best=x.c; } }
   const term=v.slice(0,60);
   if(!best){ out.innerHTML=`<p class="muted">${t.none}</p>`; if(typed) track("nf:"+term,{path:"niet-gevonden: "+term,title:"Niet gevonden",event:true}); return; }
+  if(rel && best.n===B.code && lang===B.lang) rel.hidden = false;
   if(bs>=72){ setUrl(pathOf(best,lang)); document.title=t.pt(nameOf(best,lang)); if(typed) track("p:"+pathOf(best,lang),{path:pathOf(best,lang),title:document.title}); }
   else if(typed) track("m:"+term,{path:"bedoel-je: "+term+" → "+best.n,title:"Twijfelachtige zoekterm",event:true});
   const [u,m,w]=best[lang], name = lang==="en" ? (best.ne||best.n) : best.n;
